@@ -41,9 +41,9 @@ if ( !empty($complemento_sql) ) {  // BOTÃO Limpar filtro(s)
         $saida = '<option value="0">Selecionar...</option>';
         foreach ($listar as $dados) {
             $saida .= '<option value="' . $dados->id . '"';
-            /*if ($dados->id == $_GET['id_assunto']) {
+            if ($dados->id == $_GET['id_assunto']) {
                 $saida .= " selected='selected'";
-            }*/
+            }
             $saida .= '>' . $dados->nome_curso . " - " . $dados->nomecurto . '</option>';
         }
         ?>
@@ -136,16 +136,30 @@ foreach ($listar as $dados){
     $tmpDataNoticia  = new Data($dados->data_validade);
     $data_validade     = $tmpDataNoticia->FormatoParaTela();
     
-    $saida .= '<tr>
-    <td>'.$data_evento.'<br>'.$data_validade.'</td>
+    $saida .= '<tr ';
+    if ($dados->data_validade < date("Y-m-d")) {
+        $saida .= ' style="color: grey"';
+        $vencido = true;
+    } else {
+        $vencido = false;
+    }
+        
+    $saida .= '><td>'.$data_evento.'<br>'.$data_validade.'</td>
     <td>'.$dados->nome_curso."<br>".$dados->nome_assunto.' ('.$dados->ano_semestre.'º)</td>
         
     <td><b>'.$dados->titulo."</b><br>".$dados->texto.'</td>
     <td>'.$temp.'</td>
-    <td><a href="noticias-unico.php?id='.$dados->id.'" class="btn btn-primary">Ver</a>  &nbsp; &nbsp;
-        <a href="noticias-up.php?id='.$dados->id.'" class="btn btn-warning">Editar</a>  &nbsp; &nbsp;
-        <a href="noticias-del.php?id='.$dados->id.'" class="btn btn-danger">Excluir</a></td>
-    </tr>'; 
+    <td><a href="noticias-unico.php?id='.$dados->id.'" class="btn ';
+    $saida .= ($vencido) ? 'btn-default' : 'btn-primary';
+    $saida .= '">Ver</a>  &nbsp; &nbsp;';
+    
+    $saida .= '<a href="noticias-up.php?id='.$dados->id.'" class="btn ';
+    $saida .= ($vencido) ? 'btn-default' : 'btn-warning';
+    $saida .= '">Editar</a>  &nbsp; &nbsp;';
+    
+    $saida .= '<a href="noticias-del.php?id='.$dados->id.'" class="btn ';
+    $saida .= ($vencido) ? 'btn-default' : 'btn-danger';
+    $saida .= '">Excluir</a></td> </tr>'; 
 }
 
 ?>

@@ -1,8 +1,13 @@
-gerar hash senha inicial
-md5 + salt
-troca de senha (o próprio)
-resetar senha (definir manualmente)
-bloquear usuario
+limitar não admin em noticia
+assunto, permitir zero no id_curso ou REMOVER assunto ou CADASTRAR apenas Curso/Semestre no assunto
 
-resetar senha (enviar por email - talvez)
-recuperar senha (talvez)
+SENHA
+gerar hash senha inicial 123
+md5 + salt (add)
+retirar senha da edicao
+redefinir senha (o próprio ou um admin)
+
+FUTURO (talvez)
+bloquear usuario
+bloquear noticia
+resetar ou recuperar senha (enviar por email)

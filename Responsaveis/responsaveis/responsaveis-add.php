@@ -23,7 +23,7 @@ include_once '../sistema/topo.php';
         <label>Email:</label>
         <input class="form-control" name="email" type="email" maxlength="50"/><br>
 
-        <label>Senha:</label>
+        <label>Senha inicial:</label>
         <input class="form-control" name="senha" type="password" maxlength="50"/><br>
 
         <button type="submit" name="botao" value="Enviar" class="btn btn-success">Enviar</button> &nbsp;&nbsp;

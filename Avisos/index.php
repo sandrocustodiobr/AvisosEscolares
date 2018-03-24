@@ -72,13 +72,13 @@ foreach ($listar as $dados){
     } else {
         echo '<div class="dash-unit" style="background-color: #003500">';
     }
-    echo '   <dtitle>' . $dados->nome_curso . ' - ' . $tmpAnoSem . ' - ' .$data_evento . '</dtitle>' .
+    echo '   <dtitle style="color: lightgreen">' . $dados->nome_curso . ' - ' . $tmpAnoSem . ' - ' .$data_evento . '</dtitle>' .
          '   <hr>' .
          '   <div class="text">' .
-         '     <p><b>' . $dados->nome_assunto . '</b> - ' .
+         '     <p align="center"><b>' . $dados->nome_assunto . '</b><br>' .
               '<b>'.$dados->titulo.'</b><br>' .
                     $dados->texto .
-         '     <p><grey>Por:' . $dados->nome_responsavel . '. Val:' . $data_validade . '</grey></p>';
+         '     <p style="color: green"><small>Por: ' . $dados->nome_responsavel . '. Val: ' . $data_validade . '</small></p>';
     if (strlen($dados->anexo)) {
         echo ' <p><a href="' . $pasta_upload . $dados->anexo . '" target="_blank"> >>> VER ANEXO <<< </a></p>';
     }
@@ -112,11 +112,12 @@ if ($cont == 0) {
         <div class="col-sm-3 col-lg-3">
 
             <!-- FILTROS -->
-            <div class="half-unit" style="background-color: #003500">
-                <dtitle>FILTROS ATIVOS - <?php echo $data_hoje; ?></dtitle>
+            <div class="dash-unit" style="background-color: #003500">
+                <dtitle style="color: lightgreen">FILTROS ATIVOS - <?php echo $data_hoje; ?></dtitle>
                 <hr>
                 <div class="cont">
-                    <p><bold><?php echo $nome_curso; ?></bold><br>
+                    <p><bold><?php echo $nome_curso; ?></bold>
+                    <hr>
                     ANO/SEM.: 
                     <?php
                     if ($ano_sem > 0) {
@@ -126,18 +127,20 @@ if ($cont == 0) {
                     }
                     ?>
                     </p>
+                    <hr>
+                    <a href="filtros.php" class="btn btn-default">Alterar Filtros</a>
                 </div>	
             </div>
 
             <!-- SERVER UPTIME -->
-            <div class="half-unit" style="background-color: #003500">
+            <!--div class="half-unit" style="background-color: #003500">
                 <dtitle>ALTERAR FILTROS</dtitle>
                 <hr>
                 <div class="cont">
                     <a href="filtros.php" class="btn btn-default">Alterar Filtros</a>
                 </div>
 
-            </div>
+            </div -->
 
         </div>
     </div><!-- /row -->

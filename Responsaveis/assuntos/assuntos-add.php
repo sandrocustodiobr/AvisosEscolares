@@ -29,8 +29,8 @@ foreach ($listar as $dados){
         <label>Descrição:</label>
         <input class="form-control" name="descricao" type="text" maxlength="100"/><br>
         
-        <label>Ano/Semestre:</label>
-        <input class="form-control" name="ano_semestre" type="number"/><br>
+        <label>Ano/Semestre (0 = Geral):</label>
+        <input class="form-control" name="ano_semestre" type="number" value="0"/><br>
         
         <label>Curso:</label><br>
         <select name="id_curso" class="form-control-static">
@@ -42,7 +42,7 @@ foreach ($listar as $dados){
 
         <button type="submit" name="botao" value="Enviar" class="btn btn-success">Enviar</button> &nbsp;&nbsp;
         <button type="reset" class="btn btn-danger">Limpar</button> &nbsp;&nbsp;
-        <a href='cursos-listar.php' class='btn btn-default'>Voltar</a>
+        <a href='assuntos.php' class='btn btn-default'>Voltar</a>
     </div>
 </form>
 

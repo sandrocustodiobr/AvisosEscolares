@@ -1,9 +1,24 @@
 <?php
 session_start();
+
 if(!isset($_SESSION['logado'])){
     header("location:../sistema/login.php");
 }
+
+if (!$_SESSION['admin']) {
+    if ($nome_modulo == "TIPOS de NOTÍCIA" && $nome_tela !== "lista/busca") {
+        header("location:tiponoticia-listar.php");
+    }
+    if ($nome_modulo == "CURSOS" && $nome_tela !== "lista/busca") {
+        header("location:cursos-listar.php");
+    }
+    if ($nome_modulo == "ASSUNTOS" && $nome_tela !== "lista/busca") {
+        header("location:assuntos-listar.php");
+    }
+}
+
 ?>
+
 <!doctype html>
 <html lang="pt-BR">
 <head>
@@ -11,7 +26,7 @@ if(!isset($_SESSION['logado'])){
 	<link rel="icon" type="image/png" href="../assets/img/favicon.ico">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>NOTÍCIAS/AVISOS ESCOLARES</title>
+	<title>AVISOS/NOTÍCIAS IFSUL</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -62,7 +77,7 @@ $pasta_upload    = "../../arquivos_upload/";
     	<div class="sidebar-wrapper">
             <div class="logo">
                 <a href="../sistema/index.php" class="simple-text">
-                    Notícias/Avisos Escolares
+                    AVISOS/NOTÍCIAS IFSUL
                 </a>
             </div>
 
@@ -110,9 +125,9 @@ $pasta_upload    = "../../arquivos_upload/";
                     </a>
                 </li>
 		<li class="active-pro">
-                    <a href="../../Avisos/" append="_blank">
+                    <a href="../../Avisos/index.php" append="_blank">
                         <i class="pe-7s-rocket"></i>
-                        <p>Visualizando Notícias/Avisos</p>
+                        Visualizando Notícias/Avisos
                     </a>
                 </li>
             </ul>

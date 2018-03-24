@@ -27,23 +27,26 @@ switch ($nome_campo) {
         $complemento_sql = "";
         break;
 }
-?>
 
-<label>Busca TIPO de NOTÍCIA por</label>
+
+if ($_SESSION['admin']) {
+    echo '<label>Busca TIPO de NOTÍCIA por</label>
   
-<form action="tiponoticia-listar.php" method="GET">
-    <select name="campo" class="form-control-static">
-        <option value="descricao" accesskey="d" 
-            <?php if ($nome_campo == "descricao") { echo "selected"; } ?> 
-                >Descrição</option>
-        <option value="id" accesskey="i" 
-            <?php if ($nome_campo == "id") { echo "selected"; } ?> 
-                >ID</option>
-    </select>
-    <input type="text" name="texto" autofocus value="<?php echo $texto_busca; ?>" class="form-control-static"> &nbsp;&nbsp;&nbsp;
-    <button type="submit" class="btn btn-primary">Buscar</button> &nbsp;&nbsp;&nbsp;
-    <a href="tiponoticia-listar.php" class="btn btn-primary">Listar todos</a> &nbsp;&nbsp;&nbsp;
-    <a href="tiponoticia-add.php" class="btn btn-warning">Cadastrar um Curso</a>
+    <form action="tiponoticia-listar.php" method="GET">
+        <select name="campo" class="form-control-static">
+            <option value="descricao" accesskey="d" 
+                <?php if ($nome_campo == "descricao") { echo "selected"; } ?> 
+                    >Descrição</option>
+            <option value="id" accesskey="i" 
+                <?php if ($nome_campo == "id") { echo "selected"; } ?> 
+                    >ID</option>
+        </select>
+        <input type="text" name="texto" autofocus value="<?php echo $texto_busca; ?>" class="form-control-static"> &nbsp;&nbsp;&nbsp;
+        <button type="submit" class="btn btn-primary">Buscar</button> &nbsp;&nbsp;&nbsp;
+        <a href="tiponoticia-listar.php" class="btn btn-primary">Listar todos</a> &nbsp;&nbsp;&nbsp;
+        <a href="tiponoticia-add.php" class="btn btn-warning">Cadastrar um Curso</a>';
+}
+?>
 </form>
        
 <br>
@@ -59,16 +62,21 @@ foreach ($listar as $dados){
     $saida .= '<tr>
     <td>'.$dados->id.'</td>
     <td>'.$dados->descricao.'</td>
-    <td><a href="tiponoticia-unico.php?id='.$dados->id.'" class="btn btn-primary">Ver</a>
-        <a href="tiponoticia-upd.php?id='.$dados->id.'" class="btn btn-warning">Editar</a></td>
-    <td><a href="tiponoticia-del.php?id='.$dados->id.'" class="btn btn-danger">Excluir</a></td>
-    </tr>';
+    <td>';
+    if ($_SESSION['admin']) {
+        $saida .= '<a href="tiponoticia-unico.php?id='.$dados->id.'" class="btn btn-primary">Ver</a>'
+                . '<a href="tiponoticia-upd.php?id='.$dados->id.'" class="btn btn-warning">Editar</a></td>'
+                . '<td><a href="tiponoticia-del.php?id='.$dados->id.'" class="btn btn-danger">Excluir</a></td>';
+    } else {
+        $saida .= '</td><td></td>';
+    }
+    $saida .= '</tr>';
 }
 ?>
 
 <div class="content table-responsive table-full-width">
     <table class="table table-hover table-striped">
-        <tr><th>ID</th><th>Descrição</th><th>Ver/Editar</th><th>Excluir</th></tr>
+        <tr><th>ID</th><th>Descrição</th><th><?php echo ($_SESSION['admin']) ? 'Ver/Editar' : ''; ?></th><th><?php echo ($_SESSION['admin']) ? 'Excluir' : ''; ?></th></tr>
         <?php echo $saida; ?>
     </table>
 </div>
