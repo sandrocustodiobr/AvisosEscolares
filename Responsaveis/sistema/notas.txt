@@ -1,0 +1,77 @@
+============================================================================================================================
+
+05/dez:
+
+Neste momento não posso seguir "aparando as arestas" do sistema, mas vou fazer isto nas férias, 
+pois podemos colocar este sistema em produção no IF no início de 2018.
+
+Acessos:
+anibal@asd.com / 123 / admin
+asd@asd.com / 123 / não admin
+
+FEITO por último:
+                        
+- Interface do usuário externo funcionando;
+
+- Restrição de acessos para os não admin no módulo de Responsáveis;
+
+- Botão "muda senha" no "responsaveis-verunico", mas apenas quando for "o próprio" responsável que estiver logado.
+
+FUTURAMENTE,
+até a possível implementação no início do ano:
+
+- Criar campo TÍTULO na notícia;
+
+- Melhorar um pouco a parte dos filtros do usuário externo com jquery;
+
+- Alterar as cores para o verde e branco (alguém bom de CSS/cores 
+  poderá fazer isto quando montarmos um grupo);
+
+- Mostrar Meus Assuntos Vinculados no Ver (único) do responsável não admin;
+
+- Restrição de acessos para os não admin em... Tipo de Notícia, Cursos, Assuntos/Matérias, e Notícia/Aviso;
+
+- Implementar muda senha e reseta senha;
+
+- Encriptar senha.
+
+============================================================================================================================
+
+PENDENCIAS em 02dez:
+
+- ajustes busca notícias (datas e curso)
+- MUDAR SENHA (quando for "o próprio" responsável)
+- resetar senha de outros responsáveis (para admins)
+- restrições para os não admin
+- limpeza anexos sem vínculo
+- nas pastas onde não há index, criar index.html vazio ou com ' window.location="../sistema/index.php"; '
+
+============================================================================================================================
+
+SISTEMA BÁSICO (ADM)
+
+            Responsaveis    Cursos  Assunto RespAssunto TipoNoticia Notícia
+principal   NA              ok      ok      ok          ok          NA
+listar      ok              ok      ok..    ok          ok          ok
+add         ok              ok      ok      ok          ok          ok
+verunico    ok              ok      ok      ok          ok          ok
+del         ok              ok      ok      ok          ok          ok
+editar      ok              ok      ok      NA          ok          ok
+restr.admin EA              ?       ?       EA          ?           ?
+
+FK                                  Curso   Resp                    TipoNoticia
+                                            Assunto                 Assunto
+                                                                    Resp
+
+Em Andameno / ok / Não se Aplica
+
+outros      upload_imagens_ok
+            login_ok
+            linkbusca_ok
+            mostar notícias (saída final do sistema) ok
+            muda senha EA
+            reseta senha ?
+
+
+============================================================================================================================
+

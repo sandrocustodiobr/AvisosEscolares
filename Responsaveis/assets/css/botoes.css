@@ -1,0 +1,25 @@
+#botao_link{
+  float:left;
+  padding: 25px 25px 20px 25px;
+  margin: 5px;
+  width: 220px;
+  height: 80px;
+  border-radius: 15px;
+  color: white;
+  font-family: sans-serif, verdana;
+  font-size: 25px;
+  text-decoration: none;
+  text-align: center;
+}
+#botao_link:hover{
+  /* transparencia */
+  filter:alpha(opacity=80);
+  opacity: 0.80;
+  -moz-opacity:0.80;
+  -webkit-opacity:0.80;
+}
+.cor1{ background-color: blue; }
+.cor2{ background-color: darkgreen; }
+.cor3{ background-color: darkred; }
+.cor4{ background-color: darkblue; }
+.cor5{ background-color: chocolate; }

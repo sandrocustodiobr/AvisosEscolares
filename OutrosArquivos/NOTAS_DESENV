@@ -1,0 +1,8 @@
+gerar hash senha inicial
+md5 + salt
+troca de senha (o próprio)
+resetar senha (definir manualmente)
+bloquear usuario
+
+resetar senha (enviar por email - talvez)
+recuperar senha (talvez)
