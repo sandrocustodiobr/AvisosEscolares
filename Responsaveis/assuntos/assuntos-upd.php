@@ -22,7 +22,7 @@ if (isset($_GET["id"])) {
 <?php // MONTANDO A LISTA DE CURSOS DO SELECT
 $objCurso = new Curso();
 $listar=$objCurso->listar();		
-$saida='<option value="0">(nenhum selecionado) Aqui você pode selecionar um...</option>';
+$saida='<option value="0">(nenhum selecionado) Equivale a TODOS...</option>';
 foreach ($listar as $dados){
     //echo " $dados->id == $id_curso <br>";
     $saida .= '<option value="'.$dados->id.'"';
@@ -54,8 +54,8 @@ foreach ($listar as $dados){
             <?php echo $saida; ?>
         </select><br><br>
         
-        <label>Imagem:</label>
-        <input class="form-control" name="imagem" type="text" value="<?php echo $item->imagem; ?>" maxlength="100"/><br>
+        <!--label>Imagem:</label>
+        <input class="form-control" name="imagem" type="text" value="<?php //echo $item->imagem; ?>" maxlength="100"/><br-->
 
         <button type="submit" name="botao" value="Enviar" class="btn btn-success">Enviar</button> &nbsp;&nbsp;
         <button type="reset" class="btn btn-danger">Limpar</button> &nbsp;&nbsp;

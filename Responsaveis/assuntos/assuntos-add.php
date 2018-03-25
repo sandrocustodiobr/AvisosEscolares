@@ -9,7 +9,7 @@ include_once '../sistema/topo.php';
 <?php // MONTANDO A LISTA DE CURSOS DO SELECT
 $objCurso = new Curso();
 $listar=$objCurso->listar($complemento_sql);		
-$saida='<option value="0">(nenhum selecionado) Aqui você pode selecionar um...</option>';
+$saida='<option value="0">(nenhum selecionado) Equivale a TODOS...</option>';
 foreach ($listar as $dados){
     $saida .= '<option value="'.$dados->id.'"';
     if ( $dados->id == $_GET['id_curso'] ) { 
@@ -37,8 +37,8 @@ foreach ($listar as $dados){
             <?php echo $saida; ?>
         </select><br><br>
         
-        <label>Imagem:</label>
-        <input class="form-control" name="imagem" type="text" maxlength="100"/><br>
+        <!--label>Imagem:</label>
+        <input class="form-control" name="imagem" type="text" maxlength="100"/><br-->
 
         <button type="submit" name="botao" value="Enviar" class="btn btn-success">Enviar</button> &nbsp;&nbsp;
         <button type="reset" class="btn btn-danger">Limpar</button> &nbsp;&nbsp;

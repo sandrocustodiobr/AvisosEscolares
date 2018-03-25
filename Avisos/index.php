@@ -35,8 +35,9 @@ $data_hoje = date("d/m/Y");
 $objNoticia = new Noticia();
 if ( $ano_sem > 0 ) {
     $complemento_sql = " where Assunto.id_curso=$curso and ano_semestre=$ano_sem";
+    $complemento_sql = " where (Assunto.id_curso=$curso or Assunto.id_curso=0) and (ano_semestre=$ano_sem or ano_semestre=0)";
 } else {
-    $complemento_sql = " where Assunto.id_curso=$curso";
+    $complemento_sql = " where Assunto.id_curso=$curso or Assunto.id_curso=0";
 }
 $complemento_sql .= " and data_validade >= '".date("Y-m-d")."' ";
 //$complemento_sql = "";

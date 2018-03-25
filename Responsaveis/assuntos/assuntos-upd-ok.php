@@ -14,7 +14,7 @@ $obj->nomecurto=strip_tags($_POST['nomecurto']);
 $obj->descricao=strip_tags($_POST['descricao']);
 $obj->ano_semestre=$_POST['ano_semestre'];
 $obj->id_curso=$_POST['id_curso'];
-$obj->imagem=strip_tags($_POST['imagem']);
+//$obj->imagem=strip_tags($_POST['imagem']);
 
 $feito = $obj->editar();
 

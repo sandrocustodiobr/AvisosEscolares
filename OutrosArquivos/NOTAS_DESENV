@@ -1,5 +1,48 @@
 limitar não admin em noticia
-assunto, permitir zero no id_curso ou REMOVER assunto ou CADASTRAR apenas Curso/Semestre no assunto
+
+ASSUNTO
+- permitir zero no id_curso (feito, revisar montagem select em noticias add, upd, del e unico)
+
+CURSOS:
+- TII Int
+- TEE Int
+- SER Int
+- TII Sub
+- SER Sub
+- TODOS (id_curso = 0)
+
+ASSUNTOS A CADASTRAR (apenas Curso/Semestre no assunto na primeira implementação):
+- TII Int - 1º Ano
+- TII Int - 2º Ano
+- TII Int - 3º Ano
+- TII Int - 4º Ano
+- TII Int - GERAL ("0" em ano/sem)
+
+- TEE Int - 1º Ano
+- TEE Int - 2º Ano
+- TEE Int - 3º Ano
+- TEE Int - 4º Ano
+- TEE Int - GERAL ("0" em ano/sem)
+
+- SER Int - 1º Ano
+- SER Int - 2º Ano
+- SER Int - 3º Ano
+- SER Int - 4º Ano
+- SER Int - GERAL ("0" em ano/sem)
+
+- TII Sub - 1º Sem
+- TII Sub - 2º Sem
+- TII Sub - 3º Sem
+- TII Sub - 4º Sem
+- TII Sub - GERAL ("0" em ano/sem)
+
+- SER Sub - 1º Sem
+- SER Sub - 2º Sem
+- SER Sub - 3º Sem
+- SER Sub - 4º Sem
+- SER Sub - GERAL ("0" em ano/sem)
+
+- TODOS (sem curso) - GERAL ("0" em ano/sem)
 
 SENHA
 gerar hash senha inicial 123
