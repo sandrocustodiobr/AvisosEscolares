@@ -26,7 +26,9 @@ $saida = "<tr><td>ID:</td>          <td>$dados->id</td></tr>
           <tr><td>Nome curto:</td>  <td>$dados->nomecurto</td></tr>
           <tr><td>Descrição:</td>   <td>$dados->descricao</td></tr>
           <tr><td>Ano/Semestre:</td><td>$dados->ano_semestre</td></tr>
-          <tr><td>Curso:</td>       <td>$dados->id_curso - $dados->nome_curso</td></tr>
+          <tr><td>Curso:</td>       <td>";
+$saida .= ($dados->id_curso == 0) ? 'Todos' : $dados->id_curso." - ".$dados->nome_curso;
+$saida .= "</td></tr>
           <tr><td>Imagem:</td>      <td>$dados->imagem</td></tr>
           <tr>
               <td>

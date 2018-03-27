@@ -14,6 +14,7 @@ class Noticia {
     private $anexo;
 
     private $nome_assunto;
+    private $id_curso;
     private $nome_curso;
     private $nome_responsavel;
     private $tiponoticia;
@@ -37,6 +38,7 @@ class Noticia {
         $this->id_tiponoticia = 0;
         $this->id_assunto = 0;
         $this->id_responsavel = 0;
+        $this->id_curso = 0;
         $this->titulo = '';
         $this->texto = '';
         $this->imagem = '';
@@ -95,12 +97,13 @@ class Noticia {
         $sql = "SELECT $this->tabela.*,"
                 . " Assunto.nomecurto as nome_assunto,"
                 . " Assunto.ano_semestre as ano_semestre,"
+                . " Assunto.id_curso as id_curso,"
                 . " Curso.nomecurto as nome_curso,"
                 . " Responsavel.nome as nome_responsavel,"
                 . " TipoNoticia.descricao as tiponoticia"
                 . " FROM $this->tabela "
                 . "INNER JOIN Assunto     ON Assunto.id      = $this->tabela.id_assunto "
-                . "INNER JOIN Curso       ON Assunto.id_curso= Curso.id "
+                . "LEFT JOIN Curso       ON Assunto.id_curso= Curso.id "
                 . "INNER JOIN Responsavel ON Responsavel.id  = $this->tabela.id_responsavel "
                 . "INNER JOIN TipoNoticia ON TipoNoticia.id  = $this->tabela.id_tiponoticia "
                 . $complemento
@@ -125,6 +128,7 @@ class Noticia {
             $obj->imagem = $reg['imagem'];
             $obj->anexo = $reg['anexo'];
             $obj->nome_assunto = $reg['nome_assunto'];
+            $obj->id_curso = $reg["id_curso"];
             $obj->nome_curso = $reg["nome_curso"];
             $obj->nome_responsavel = $reg["nome_responsavel"];
             $obj->tiponoticia = $reg['tiponoticia'];
@@ -164,12 +168,13 @@ class Noticia {
         $sql = "SELECT $this->tabela.*,"
                 . " Assunto.nomecurto as nome_assunto,"
                 . " Assunto.ano_semestre as ano_semestre,"
+                . " Assunto.id_curso as id_curso,"
                 . " Curso.nomecurto as nome_curso,"
                 . " Responsavel.nome as nome_responsavel,"
                 . " TipoNoticia.descricao as tiponoticia"
                 . " FROM $this->tabela "
                 . "INNER JOIN Assunto     ON Assunto.id      = $this->tabela.id_assunto "
-                . "INNER JOIN Curso       ON Assunto.id_curso= Curso.id "
+                . "LEFT  JOIN Curso       ON Assunto.id_curso= Curso.id "
                 . "INNER JOIN Responsavel ON Responsavel.id  = $this->tabela.id_responsavel "
                 . "INNER JOIN TipoNoticia ON TipoNoticia.id  = $this->tabela.id_tiponoticia "
                 . "WHERE $this->tabela.id=$this->id";
@@ -203,6 +208,7 @@ class Noticia {
             $obj1->anexo = $reg['anexo'];
             $obj1->nome_responsavel = $reg['nome_responsavel'];
             $obj1->nome_assunto = $reg['nome_assunto'];
+            $obj1->id_curso = $reg["id_curso"];
             $obj1->nome_curso = $reg["nome_curso"];
             $obj1->tiponoticia = $reg['tiponoticia'];
             $obj1->ano_semestre = $reg['ano_semestre'];

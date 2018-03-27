@@ -56,7 +56,7 @@ class Assunto {
     public function listar($complemento = "") {
 
         //$sql = "SELECT * FROM $this->tabela ".$complemento;
-        $sql = "SELECT Assunto.*, Curso.nomecurto as nome_curso FROM $this->tabela INNER JOIN Curso ON Curso.id=$this->tabela.id_curso ".$complemento;
+        $sql = "SELECT Assunto.*, Curso.nomecurto as nome_curso FROM $this->tabela LEFT JOIN Curso ON Curso.id=$this->tabela.id_curso ".$complemento;
         $resultado = mysqli_query($this->link, $sql);
         $retorno = NULL;
         
@@ -100,7 +100,7 @@ class Assunto {
     
     public function retornarunico() {
         /*  Mostra reg. único */
-        $sql = "SELECT Assunto.*, Curso.nomecurto as nome_curso FROM $this->tabela INNER JOIN Curso ON Curso.id=$this->tabela.id_curso WHERE $this->tabela.id=$this->id"; 
+        $sql = "SELECT Assunto.*, Curso.nomecurto as nome_curso FROM $this->tabela LEFT JOIN Curso ON Curso.id=$this->tabela.id_curso WHERE $this->tabela.id=$this->id"; 
         //SELECT Assunto.*, Curso.nomecurto as nome_curso FROM Assunto INNER JOIN Curso ON Curso.id=Assunto.id_curso WHERE Assunto.id=4 
         
         //echo "<br>retornaunico: ". $this->id."<br>";

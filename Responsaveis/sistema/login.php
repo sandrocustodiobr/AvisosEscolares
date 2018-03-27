@@ -11,7 +11,7 @@ if ($_SESSION["logado"]) {
 	<link rel="icon" type="image/png" href="../assets/img/favicon.ico">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>NOTÍCIAS/AVISOS ESCOLARES</title>
+	<title>NOTÍCIAS/AVISOS IFSUL</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -51,7 +51,7 @@ if ($_SESSION["logado"]) {
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default panel-primary">
                     <div class="panel-heading">
-                        <h3 class="panel-title">NOTÍCIAS/AVISOS ESCOLARES</h3>
+                        <h3 class="panel-title">NOTÍCIAS/AVISOS IFSUL</h3>
                     </div>
                     <div class="panel-body">
                         <form method="POST" action="login-ok.php">

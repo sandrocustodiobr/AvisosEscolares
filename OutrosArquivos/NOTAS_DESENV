@@ -1,48 +1,5 @@
-limitar não admin em noticia
-
-ASSUNTO
-- permitir zero no id_curso (feito, revisar montagem select em noticias add, upd, del e unico)
-
-CURSOS:
-- TII Int
-- TEE Int
-- SER Int
-- TII Sub
-- SER Sub
-- TODOS (id_curso = 0)
-
-ASSUNTOS A CADASTRAR (apenas Curso/Semestre no assunto na primeira implementação):
-- TII Int - 1º Ano
-- TII Int - 2º Ano
-- TII Int - 3º Ano
-- TII Int - 4º Ano
-- TII Int - GERAL ("0" em ano/sem)
-
-- TEE Int - 1º Ano
-- TEE Int - 2º Ano
-- TEE Int - 3º Ano
-- TEE Int - 4º Ano
-- TEE Int - GERAL ("0" em ano/sem)
-
-- SER Int - 1º Ano
-- SER Int - 2º Ano
-- SER Int - 3º Ano
-- SER Int - 4º Ano
-- SER Int - GERAL ("0" em ano/sem)
-
-- TII Sub - 1º Sem
-- TII Sub - 2º Sem
-- TII Sub - 3º Sem
-- TII Sub - 4º Sem
-- TII Sub - GERAL ("0" em ano/sem)
-
-- SER Sub - 1º Sem
-- SER Sub - 2º Sem
-- SER Sub - 3º Sem
-- SER Sub - 4º Sem
-- SER Sub - GERAL ("0" em ano/sem)
-
-- TODOS (sem curso) - GERAL ("0" em ano/sem)
+NOTICIA
+- limitar não admin
 
 SENHA
 gerar hash senha inicial 123
@@ -54,3 +11,86 @@ FUTURO (talvez)
 bloquear usuario
 bloquear noticia
 resetar ou recuperar senha (enviar por email)
+
+
+
+
+
+
+============================================================================================================================
+
+05/dez:
+
+Neste momento não posso seguir "aparando as arestas" do sistema, mas vou fazer isto nas férias, 
+pois podemos colocar este sistema em produção no IF no início de 2018.
+
+Acessos:
+anibal@asd.com / 123 / admin
+asd@asd.com / 123 / não admin
+
+FEITO por último:
+                        
+- Interface do usuário externo funcionando;
+
+- Restrição de acessos para os não admin no módulo de Responsáveis;
+
+- Botão "muda senha" no "responsaveis-verunico", mas apenas quando for "o próprio" responsável que estiver logado.
+
+FUTURAMENTE,
+até a possível implementação no início do ano:
+
+- Criar campo TÍTULO na notícia;
+
+- Melhorar um pouco a parte dos filtros do usuário externo com jquery;
+
+- Alterar as cores para o verde e branco (alguém bom de CSS/cores 
+  poderá fazer isto quando montarmos um grupo);
+
+- Mostrar Meus Assuntos Vinculados no Ver (único) do responsável não admin;
+
+- Restrição de acessos para os não admin em... Tipo de Notícia, Cursos, Assuntos/Matérias, e Notícia/Aviso;
+
+- Implementar muda senha e reseta senha;
+
+- Encriptar senha.
+
+============================================================================================================================
+
+PENDENCIAS em 02dez:
+
+- ajustes busca notícias (datas e curso)
+- MUDAR SENHA (quando for "o próprio" responsável)
+- resetar senha de outros responsáveis (para admins)
+- restrições para os não admin
+- limpeza anexos sem vínculo
+- nas pastas onde não há index, criar index.html vazio ou com ' window.location="../sistema/index.php"; '
+
+============================================================================================================================
+
+SISTEMA BÁSICO (ADM)
+
+            Responsaveis    Cursos  Assunto RespAssunto TipoNoticia Notícia
+principal   NA              ok      ok      ok          ok          NA
+listar      ok              ok      ok..    ok          ok          ok
+add         ok              ok      ok      ok          ok          ok
+verunico    ok              ok      ok      ok          ok          ok
+del         ok              ok      ok      ok          ok          ok
+editar      ok              ok      ok      NA          ok          ok
+restr.admin EA              ok      ok      EA          ok          ?
+
+FK                                  Curso   Resp                    TipoNoticia
+                                            Assunto                 Assunto
+                                                                    Resp
+
+Em Andameno / ok / Não se Aplica
+
+outros      upload_imagens_ok
+            login_ok
+            linkbusca_ok
+            mostar notícias (saída final do sistema) ok
+            muda senha EA
+            reseta senha ?
+
+
+============================================================================================================================
+

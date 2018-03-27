@@ -144,12 +144,21 @@ foreach ($listar as $dados){
         $vencido = false;
     }
         
-    $saida .= '><td>'.$data_evento.'<br>'.$data_validade.'</td>
-    <td>'.$dados->nome_curso."<br>".$dados->nome_assunto.' ('.$dados->ano_semestre.'º)</td>
-        
-    <td><b>'.$dados->titulo."</b><br>".$dados->texto.'</td>
-    <td>'.$temp.'</td>
-    <td><a href="noticias-unico.php?id='.$dados->id.'" class="btn ';
+    $saida .= '><td>';
+    $saida .= ($vencido) ? '' : '<b>';
+    $saida .= $data_evento;
+    $saida .= ($vencido) ? '' : '</b>';
+    $saida .= '<br>';
+    $saida .= ($vencido) ? '<b style="color: darkred">' : '';
+    $saida .= $data_validade;
+    $saida .= ($vencido) ? '</b>' : '';
+    $saida .= '</td><td>'.$dados->nome_curso."<br>".$dados->nome_assunto;
+    $saida .= ($dados->ano_semestre == 0) ? ' (geral)' : ' ('.$dados->ano_semestre.'º)';
+    $saida .= '</td><td><b';
+    $saida .= ($vencido) ? '' : ' style="color: darkgreen"';
+    $saida .= '><big>'.$dados->titulo."</big></b><br>".$dados->texto.'</td>
+                <td>'.$temp.'</td>
+                <td><a href="noticias-unico.php?id='.$dados->id.'" class="btn ';
     $saida .= ($vencido) ? 'btn-default' : 'btn-primary';
     $saida .= '">Ver</a>  &nbsp; &nbsp;';
     

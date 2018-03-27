@@ -42,13 +42,15 @@ foreach ($listar as $dados){
     <td>'.$dados->id.'</td>
     <td>'.$dados->nomecurto.'</td>
     <td>'.$dados->descricao.'</td>
-    <td>'.$dados->ano_semestre.'º</td>
-    <td>'.$dados->nome_curso.'</td>
     <td>';
+    $saida .= ($dados->ano_semestre == 0) ? "Geral" : $dados->ano_semestre.'º';
+    $saida .= '</td> <td>';
+    $saida .= ($dados->id_curso == 0) ? 'Todos' : $dados->id_curso." - ".$dados->nome_curso;
+    $saida .= '</td> <td>';
     if ($_SESSION['admin']) {
         $saida .= '<a href="assuntos-unico.php?id='.$dados->id.'" class="btn btn-primary">Ver</a>'
-                . '<a href="tiponoticia-upd.php?id='.$dados->id.'" class="btn btn-warning">Editar</a></td>'
-                . '<td><a href="tiponoticia-del.php?id='.$dados->id.'" class="btn btn-danger">Excluir</a></td>';
+                . '<a href="assuntos-upd.php?id='.$dados->id.'" class="btn btn-warning">Editar</a></td>'
+                . '<td><a href="assuntos-del.php?id='.$dados->id.'" class="btn btn-danger">Excluir</a></td>';
     } else {
         $saida .= '</td><td></td>';
     }

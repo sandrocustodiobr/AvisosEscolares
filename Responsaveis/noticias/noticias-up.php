@@ -88,7 +88,9 @@ function DataParaTela($pData) {
                             if ($dados->id == $item78->id_assunto) {
                                 $saida .= " selected='selected'";
                             }
-                            $saida .= '>' . $dados->nome_curso . " - " . $dados->nomecurto . '</option>';
+                            $saida .= '>';
+                            $saida .= ($dados->id_curso > 0) ? $dados->nome_curso : '(Todos)';
+                            $saida .= " - " . $dados->nomecurto . '</option>';
                         }
                         ?>
                         <label>Assunto:</label><br>

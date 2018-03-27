@@ -52,7 +52,9 @@ foreach ($listar as $dados){
     if ( $dados->id == $_GET['id_assunto'] ) { 
         $saida .= " selected";
     }
-    $saida .= '>'.$dados->nome_curso." - ".$dados->nomecurto.'</option>';
+    $saida .= '>';
+    $saida .= ($dados->id_curso > 0) ? $dados->nome_curso : '(Todos)';
+    $saida .= " - " . $dados->nomecurto . '</option>';
 }
 ?>
         <label>Assunto:</label><br>
