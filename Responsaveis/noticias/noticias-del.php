@@ -21,8 +21,7 @@ $dados = $obj->retornarunico();
 $temp = "";
 if ( $dados->admin ) { $temp = "<tr><td>Admin</td><td>Sim</td></tr>"; }
 
-$saida = "<tr><td>ID</td>           <td>$dados->id</td></tr>
-          <tr><td>Publicado em</td> <td>$dados->data_publicacao</td></tr>
+$saida = "<tr><td><small>Publicado em</small></td> <td><small>$dados->data_publicacao</small></td></tr>
           <tr><td>Data Evento</td>  <td>$dados->data_evento</td></tr>
           <tr><td>Validade</td>     <td>$dados->data_validade</td></tr>
           <tr><td>Tipo Notícia</td> <td>$dados->tiponoticia</td></tr>
