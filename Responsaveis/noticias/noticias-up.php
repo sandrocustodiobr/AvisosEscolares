@@ -100,20 +100,21 @@ function DataParaTela($pData) {
 
                         <?php
                         // MONTANDO A LISTA DE RESPONSAVEIS DO SELECT
-                        $obj = new Responsavel();
-                        $listar = $obj->listar($complemento_sql);
-                        $saida = '<option value="0">(nenhum selecionado) Aqui você pode selecionar um...</option>';
-                        foreach ($listar as $dados) {
-                            $saida .= '<option value="' . $dados->id . '"';
-                            if ($dados->id == $item78->id_responsavel) {
-                                $saida .= " selected='selected'";
-                            }
-                            $saida .= '>' . $dados->nome . '</option>';
-                        }
+//                        $obj = new Responsavel();
+//                        $listar = $obj->listar($complemento_sql);
+//                        $saida = '<option value="0">(nenhum selecionado) Aqui você pode selecionar um...</option>';
+//                        foreach ($listar as $dados) {
+//                            $saida .= '<option value="' . $dados->id . '"';
+//                            if ($dados->id == $item78->id_responsavel) {
+//                                $saida .= " selected='selected'";
+//                            }
+//                            $saida .= '>' . $dados->nome . '</option>';
+//                        }
                         ?>
                         <label>Responsável:</label><br>
                         <select name="id_responsavel" class="form-control-static">
-                            <?php echo $saida; ?>
+                            <?php //echo $saida; ?>
+                            <option value="<?php echo $_SESSION['id']; ?>" selected readonly><?php echo $_SESSION['nome']; ?></option>
                         </select><br><br>
             </div>
             

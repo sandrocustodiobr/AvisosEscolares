@@ -25,7 +25,7 @@ include_once '../sistema/topo.php';
         <table>
          <tbody>
              <tr><td>
-<?php // MONTANDO A LISTA DE RESPONSAVEIS DO SELECT
+<?php // MONTANDO A LISTA DE TIPONOTICIA DO SELECT
 $objCurso = new Tiponoticia();
 $listar=$objCurso->listar($complemento_sql);		
 $saida='<option value="0">(nenhum selecionado) Aqui você pode selecionar um...</option>';
@@ -62,21 +62,9 @@ foreach ($listar as $dados){
             <?php echo $saida; ?>
         </select><br><br>
 
-<?php // MONTANDO A LISTA DE RESPONSAVEIS DO SELECT
-$obj = new Responsavel();
-$listar=$obj->listar($complemento_sql);		
-$saida='<option value="0">(nenhum selecionado) Aqui você pode selecionar um...</option>';
-foreach ($listar as $dados){
-    $saida .= '<option value="'.$dados->id.'"';
-    if ( $dados->id == $_GET['id_responsavel'] ) { 
-        $saida .= " selected";
-    }
-    $saida .= '>'.$dados->nome.'</option>';
-}
-?>
         <label>Responsável:</label><br>
         <select name="id_responsavel" class="form-control-static">
-            <?php echo $saida; ?>
+            <option value="<?php echo $_SESSION['id']; ?>" selected readonly><?php echo $_SESSION['nome']; ?></option>
         </select><br><br>
 
         </td><td>
