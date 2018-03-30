@@ -9,7 +9,6 @@ include_once '../sistema/topo.php';
 
 <?php // FILTROS
 $objFiltro = new Parametros();
-$objFiltro->add('data'  , 'data_publicacao', $_GET['data_publicacao']);
 $objFiltro->add('data'  , 'data_evento'    , $_GET['data_evento']    );
 $objFiltro->add('int'   , 'id_assunto'     , $_GET['id_assunto']);
 $objFiltro->add('texto' , 'texto'          , $_GET['texto']     );
@@ -53,9 +52,6 @@ if ( !empty($complemento_sql) ) {  // BOTÃO Limpar filtro(s)
         <table>
             <tr>
                 <td>
-                    <label>Data Publicação:</label> &nbsp; &nbsp;
-                </td>
-                <td>
                     <label>Data Evento:</label> &nbsp; &nbsp;
                 </td>
                 <td>
@@ -71,9 +67,6 @@ if ( !empty($complemento_sql) ) {  // BOTÃO Limpar filtro(s)
                 </td>
             </tr>
             <tr>
-                <td>
-                    <input type="date" name="data_publicacao" class="form-control-static"> &nbsp;
-                </td>
                 <td>
                     <input type="date" name="data_evento" class="form-control-static"> &nbsp;
                 </td>

@@ -29,30 +29,28 @@ function DataParaTela($pData) {
     <div id="form_resp_add">
 
         <div class="row">
+
             <div class="col-md-6">
-                        <label>ID:</label> &nbsp;&nbsp;&nbsp;&nbsp;
-                        <input class="form-control-static" name="id" type="number" value="<?php echo $item78->id; ?>" readonly/> &nbsp;&nbsp;&nbsp;&nbsp;
-
-                        <br><br>
-
-                        <label>Data Publicação:</label> &nbsp;&nbsp;&nbsp;&nbsp;
-                        <input class="form-control-static" name="data_publicacao" type="date" value="<?php echo $item78->data_publicacao; ?>" readonly/> &nbsp;&nbsp;&nbsp;&nbsp;
-            </div>
-            <div class="col-md-6">
-
-                        <label>Data Evento: </label>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <?php //echo DataParaTela($item78->data_evento); // PADRÃO USADO ANTERIORMENTE NOS INPUT TYPE=DATE ?>
-                        <input class="form-control-static" name="data_evento"     type="date" value="<?php echo $item78->data_evento; ?>"/> &nbsp;&nbsp;&nbsp;&nbsp;
-
-                        <br><br>
-
-                        <label>Data Validade:</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input class="form-control-static" name="data_validade"   type="date" value="<?php echo $item78->data_validade; ?>"/> &nbsp;&nbsp;&nbsp;&nbsp;
-
+                
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
+                <input class="form-control-static" name="id" type="number" value="<?php echo $item78->id; ?>" readonly hidden/>
+                <input class="form-control-static" name="data_publicacao" type="date" value="<?php echo $item78->data_publicacao; ?>" readonly hidden/>
+
+                
+                <label>Data Evento: </label>&nbsp;&nbsp;&nbsp;&nbsp;
+                <?php //echo DataParaTela($item78->data_evento); // PADRÃO USADO ANTERIORMENTE NOS INPUT TYPE=DATE ?>
+                <input class="form-control-static" name="data_evento"     type="date" value="<?php echo $item78->data_evento; ?>"/> &nbsp;&nbsp;&nbsp;&nbsp;
+
+                <br><br>
+                
+                <label>Data Validade:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                <input class="form-control-static" name="data_validade"   type="date" value="<?php echo $item78->data_validade; ?>"/> &nbsp;&nbsp;&nbsp;&nbsp;
+
+                <br>
+                
                         <?php
                         // MONTANDO A LISTA DE RESPONSAVEIS DO SELECT
                         $objCurso = new Tiponoticia();

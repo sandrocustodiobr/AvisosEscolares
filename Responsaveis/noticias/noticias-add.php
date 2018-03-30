@@ -10,9 +10,7 @@ include_once '../sistema/topo.php';
 <form method="POST" action="noticias-add-ok.php" enctype="multipart/form-data">
     <div id="form_resp_add">
         
-        
-        <label>Data Publicação:</label> &nbsp;&nbsp;&nbsp;&nbsp;
-        <input class="form-control-static" name="data_publicacao" type="date" value="<?php echo date('Y-m-d');?>" readonly/> &nbsp;&nbsp;&nbsp;&nbsp;
+        <input class="form-control-static" name="data_publicacao" type="date" value="<?php echo date('Y-m-d');?>" readonly hidden/>
 
         <label>Data Evento:</label>&nbsp;&nbsp;&nbsp;&nbsp;
         <input class="form-control-static" name="data_evento"     type="date" value="<?php echo date('Y-m-d', strtotime("+30 days",strtotime(date("Y-m-d"))));?>"/> &nbsp;&nbsp;&nbsp;&nbsp;

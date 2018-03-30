@@ -1,7 +1,7 @@
 NOTICIA
 - OK listar apenas o próprio resp. como resp nas telas de add e upd
 - limitar não admin (listar/ver/editar/excluir apenas notícias de assuntos onde é responsável)
-- retirar das telas de add e upd id e data de publicação
+- OK retirar das telas de add e upd id e data de publicação
 
 logoff
 que feche sessão e faça location para index externo
