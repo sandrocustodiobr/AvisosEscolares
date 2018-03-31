@@ -38,7 +38,7 @@ if ( strlen($dados->imagem) > 0 ) { $saida .= "<img src='../../arquivos_upload/$
 $saida .= "</td></tr>
           <tr><td>Anexo</td>        <td>";
 
-if ( strlen($dados->imagem) > 0 ) { $saida .= "<a href='../../arquivos_upload/$dados->anexo' target='_blank'>$dados->anexo</a>"; }
+if ( strlen($dados->anexo) > 0 ) { $saida .= "<a href='../../arquivos_upload/$dados->anexo' target='_blank'>$dados->anexo</a>"; }
 
 $saida .= "</td></tr>
           $temp

@@ -135,7 +135,7 @@ function DataParaTela($pData) {
                         <a href="<?php echo "${pasta_upload}$item78->imagem"; ?>" target="_blank" class='btn btn-default'>Ver/abrir</a> &nbsp;&nbsp;
                         <!-- <a id="limpa_imagem" class='btn btn-warning' onclick="LimpaImagem()">Limpar</a> &nbsp;&nbsp; -->
                         <input name="limpa_imagem" type="checkbox" maxlength="150"/>Remover
-                        <input class="form-control" name="anexo" type="text" maxlength="150" value="<?php echo $item78->imagem; ?>" readonly/>
+                        <input class="form-control" name="imagem" type="text" maxlength="150" value="<?php echo $item78->imagem; ?>" readonly/>
                         <br>Alterar/Incluir:
                         <input name="imagem" type="file" maxlength="150"/>
             

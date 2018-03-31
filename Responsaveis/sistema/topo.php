@@ -119,7 +119,7 @@ $pasta_upload    = "../../arquivos_upload/";
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="../sistema/logoff.php">
                         <i class="pe-7s-close-circle"></i>
                         <p>SAIR</p>
                     </a>
@@ -176,7 +176,7 @@ $pasta_upload    = "../../arquivos_upload/";
                         </li>
                         
 	                    <li>
-                            <a href="../sistema/login.php">
+                                <a href="../sistema/logoff.php">
                                 <p><i class="pe-7s-close-circle"></i> SAIR</p>
                             </a>
                         </li>
