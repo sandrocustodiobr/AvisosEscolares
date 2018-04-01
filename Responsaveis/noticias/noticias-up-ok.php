@@ -63,13 +63,16 @@ if( $_FILES ) { // Verificando se existe o envio de arquivos.
 	
 	if( $_FILES['imagem'] && strlen($_FILES['imagem']['name']) > 0 ) { // Verifica se o campo não está vazio.
 		$dir = '../../arquivos_upload/'; // Diretório que vai receber o arquivo.
+                $subdir = date('Y/m/');
+                mkdir($dir.$subdir,0777,TRUE); // recursive
 		$tmpName = $_FILES['imagem']['tmp_name']; // Recebe o arquivo temporário.
 		$name = $_FILES['imagem']['name']; // Recebe o nome do arquivo.
-                $agora = date('Ymd_Hi_'); // YYYY/mm/ddHHMM_
+                $agora = date('d_Hi_'); // YYYY/mm/dd_HHMM_
                 echo "Enviando ".$name." ...";
-                if( move_uploaded_file( $tmpName, $dir.$agora.$name ) )  {
+                //echo "(".$dir.$subdir.$agora.$name.") (".$tmpName.")";
+                if( move_uploaded_file( $tmpName, $dir.$subdir.$agora.$name ) )  {
                     echo "ok.<br>";
-                    $obj->imagem = $agora.$name; // ALTERA PARA O UPDATE
+                    $obj->imagem = $subdir.$agora.$name; // ALTERA PARA O UPDATE
                 } else {
                     echo "ERRO!<br>";
                 }
@@ -77,13 +80,16 @@ if( $_FILES ) { // Verificando se existe o envio de arquivos.
         
         if( $_FILES['anexo'] && strlen($_FILES['anexo']['name']) > 0 ) { // Verifica se o campo não está vazio.
 		$dir = '../../arquivos_upload/'; // Diretório que vai receber o arquivo.
+                $subdir = date('Y/m/');
+                mkdir($dir.$subdir,0777,TRUE); // recursive
 		$tmpName = $_FILES['anexo']['tmp_name']; // Recebe o arquivo temporário.
 		$name = $_FILES['anexo']['name']; // Recebe o nome do arquivo.
-                $agora = date('Ymd_Hi_'); // YYYY/mm/ddHHMM_
+                $agora = date('d_Hi_'); // YYYY/mm/dd_HHMM_
                 echo "Enviando ".$name." ...";
-                if( move_uploaded_file( $tmpName, $dir.$agora.$name ) )  {
+                //echo "(".$dir.$subdir.$agora.$name.") (".$tmpName.")";
+                if( move_uploaded_file( $tmpName, $dir.$subdir.$agora.$name ) )  {
                     echo "ok.<br>";
-                    $obj->anexo = $agora.$name; // ALTERA PARA O UPDATE
+                    $obj->anexo = $subdir.$agora.$name; // ALTERA PARA O UPDATE
                 } else {
                     echo "ERRO!<br>";
                 }
