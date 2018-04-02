@@ -103,7 +103,23 @@ if ( !empty($complemento_sql) ) {  // BOTÃO Limpar filtro(s)
         
         <!-- MONTAR ======================================================================== -->
         
-<?php // TABELA 
+<?php // PEGA ASSUNTOS DO RESPONSAVEL
+$complemento_resp = " where id_responsavel=".$_SESSION['id'];
+$obj = new RespAssunto();
+$listar=$obj->listar($complemento_resp);	
+$listaAssuntosResp = array();
+foreach ($listar as $dados){
+    // incluir elem com o Asscunto
+    $listaAssuntosResp[] = $dados->id_assunto;
+}
+//echo "<pre>";
+//var_dump($listaAssuntosResp);
+//echo "</pre>";
+
+
+
+
+// TABELA 
 
 $objNoticia = new Noticia();
 $listar=$objNoticia->listar($complemento_sql);
@@ -128,6 +144,9 @@ foreach ($listar as $dados){
     
     $tmpDataNoticia  = new Data($dados->data_validade);
     $data_validade     = $tmpDataNoticia->FormatoParaTela();
+    
+    // verifica se é Resp. deste Assunto 
+    $ehRespAssunto = in_array($dados->id_assunto, $listaAssuntosResp);
     
     $saida .= '<tr ';
     if ($dados->data_validade < date("Y-m-d")) {
@@ -155,13 +174,15 @@ foreach ($listar as $dados){
     $saida .= ($vencido) ? 'btn-default' : 'btn-primary';
     $saida .= '">Ver</a>  &nbsp; &nbsp;';
     
-    $saida .= '<a href="noticias-up.php?id='.$dados->id.'" class="btn ';
-    $saida .= ($vencido) ? 'btn-default' : 'btn-warning';
-    $saida .= '">Editar</a>  &nbsp; &nbsp;';
-    
-    $saida .= '<a href="noticias-del.php?id='.$dados->id.'" class="btn ';
-    $saida .= ($vencido) ? 'btn-default' : 'btn-danger';
-    $saida .= '">Excluir</a></td> </tr>'; 
+    if ($ehRespAssunto) {
+        $saida .= '<a href="noticias-up.php?id=' . $dados->id . '" class="btn ';
+        $saida .= ($vencido) ? 'btn-default' : 'btn-warning';
+        $saida .= '">Editar</a>  &nbsp; &nbsp;';
+
+        $saida .= '<a href="noticias-del.php?id=' . $dados->id . '" class="btn ';
+        $saida .= ($vencido) ? 'btn-default' : 'btn-danger';
+        $saida .= '">Excluir</a></td> </tr>';
+    }
 }
 
 ?>

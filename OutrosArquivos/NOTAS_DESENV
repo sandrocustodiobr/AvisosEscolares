@@ -1,12 +1,11 @@
 NOTICIA
-- limitar não admin (listar/ver/excluir apenas notícias de assuntos onde é responsável)
 - liberar auto atrib de Assuntos para Responsaveis
 - tag Admin no login
 - Mostrar Meus Assuntos Vinculados no Ver (único) do responsável não admin;
 
 
-commit atual   : "Restringir aos Assuntos do Reponsável no noticias-add e up."
-commit anterior: "Imagem/Anexo em add/up e query portal."
+commit atual   : "Restringir aos Assuntos do Reponsável no noticias.php (listar) os botões Editar e Excluir."
+commit anterior: "Restringir aos Assuntos do Reponsável no noticias-add e up."
 
 SENHA
 gerar hash senha inicial 123
