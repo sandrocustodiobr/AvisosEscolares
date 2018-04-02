@@ -6,6 +6,7 @@ class RespAssunto {
     private $id_assunto;
     private $nome_assunto;
     private $nome_curso;
+    private $id_curso;
 
 
     private $tabela;
@@ -51,12 +52,15 @@ class RespAssunto {
     }
     
     public function listar($complemento = "") {
-        $sql = "SELECT $this->tabela.*, Assunto.nomecurto as nome_assunto, Curso.nomecurto as nome_curso"
+        $sql = "SELECT $this->tabela.*,"
+                ." Assunto.nomecurto as nome_assunto,"
+                ." Curso.nomecurto as nome_curso,"
+                ." Assunto.id_curso"
                 ." FROM $this->tabela "
                 ."INNER JOIN Assunto ON Assunto.id=$this->tabela.id_assunto "
-                ."INNER JOIN Curso   ON Assunto.id_curso=Curso.id "
+                ."LEFT  JOIN Curso   ON Assunto.id_curso=Curso.id "
                 .$complemento;
-        //echo "<br>$sql<br>";
+//        echo "<br>$sql<br>";
 
         $resultado = mysqli_query($this->link, $sql);
         $retorno = NULL;
@@ -69,6 +73,7 @@ class RespAssunto {
             $obj->id_assunto = $reg["id_assunto"];
             $obj->nome_assunto = $reg["nome_assunto"];
             $obj->nome_curso = $reg["nome_curso"];
+            $obj->id_curso = $reg["id_curso"];
             
             $retorno[] = $obj;
         }

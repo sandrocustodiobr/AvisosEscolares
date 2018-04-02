@@ -42,17 +42,22 @@ foreach ($listar as $dados){
         
         
 <?php // MONTANDO A LISTA DE ASSUNTOS DO SELECT
-$obj = new Assunto();
-$listar=$obj->listar($complemento_sql);		
+$complemento_sql = " where id_responsavel=".$_SESSION['id'];
+$obj = new RespAssunto();
+$listar=$obj->listar($complemento_sql);	
 $saida='<option value="0">(nenhum selecionado) Aqui você pode selecionar um...</option>';
 foreach ($listar as $dados){
-    $saida .= '<option value="'.$dados->id.'"';
-    if ( $dados->id == $_GET['id_assunto'] ) { 
+//    echo "<pre>";
+//    echo var_dump($dados);
+//    echo "</pre>";
+    $saida .= '<option value="'.$dados->id_assunto.'"';
+    if ( $dados->id_assunto == $item78->id_assunto ) { 
         $saida .= " selected";
     }
     $saida .= '>';
     $saida .= ($dados->id_curso > 0) ? $dados->nome_curso : '(Todos)';
-    $saida .= " - " . $dados->nomecurto . '</option>';
+    //$saida .= $dados->id_curso." - ".$dados->nome_curso;
+    $saida .= " - " . $dados->nome_assunto . '</option>';
 }
 ?>
         <label>Assunto:</label><br>

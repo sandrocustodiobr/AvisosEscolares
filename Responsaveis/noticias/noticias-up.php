@@ -13,6 +13,9 @@ if (isset($_GET["id"])) {
     $item78 = $obj3->retornarunico();
     //$item78->MostraDados();
     $select_tiponoticia = $item78->id_tiponoticia;
+//    echo "<pre>";
+//    var_dump($item78);
+//    echo "</pre>";
 } else {
     header("ID não informado.");
 }
@@ -76,21 +79,25 @@ function DataParaTela($pData) {
                         </select><br><br>
 
 
-                        <?php
-                        // MONTANDO A LISTA DE ASSUNTOS DO SELECT
-                        $obj90 = new Assunto();
-                        $listar = $obj90->listar($complemento_sql);
-                        $saida = '<option value="0">(nenhum selecionado) Aqui você pode selecionar um...</option>';
-                        foreach ($listar as $dados) {
-                            $saida .= '<option value="' . $dados->id . '"';
-                            if ($dados->id == $item78->id_assunto) {
-                                $saida .= " selected='selected'";
-                            }
-                            $saida .= '>';
-                            $saida .= ($dados->id_curso > 0) ? $dados->nome_curso : '(Todos)';
-                            $saida .= " - " . $dados->nomecurto . '</option>';
-                        }
-                        ?>
+<?php // MONTANDO A LISTA DE ASSUNTOS DO SELECT
+$complemento_sql = " where id_responsavel=".$_SESSION['id'];
+$obj = new RespAssunto();
+$listar=$obj->listar($complemento_sql);	
+$saida='<option value="0">(nenhum selecionado) Aqui você pode selecionar um...</option>';
+foreach ($listar as $dados){
+//    echo "<pre>";
+//    echo var_dump($dados);
+//    echo "</pre>";
+    $saida .= '<option value="'.$dados->id_assunto.'"';
+    if ( $dados->id_assunto == $item78->id_assunto ) { 
+        $saida .= " selected";
+    }
+    $saida .= '>';
+    $saida .= ($dados->id_curso > 0) ? $dados->nome_curso : '(Todos)';
+    //$saida .= $dados->id_curso." - ".$dados->nome_curso;
+    $saida .= " - " . $dados->nome_assunto . '</option>';
+}
+?>
                         <label>Assunto:</label><br>
                         <select name="id_assunto" class="form-control-static">
                         <?php echo $saida; ?>
