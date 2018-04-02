@@ -60,7 +60,7 @@ foreach ($listar as $dados){
     $saida .= " - " . $dados->nome_assunto . '</option>';
 }
 ?>
-        <label>Assunto:</label><br>
+        <label>Assunto:</label>&nbsp;&nbsp;<small>( <a href="../responsaveis/resp-assuntos.php">gereciar assuntos</a> )</small><br>
         <select name="id_assunto" class="form-control-static">
             <?php echo $saida; ?>
         </select><br><br>

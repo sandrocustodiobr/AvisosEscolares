@@ -1,8 +1,5 @@
 <?php
 session_start();
-if ( isset($_SESSION['logado']) && isset($_SESSION['id']) && !$_SESSION['admin'] ){
-    header("location:responsaveis-unico.php");
-}
 
 $nome_modulo = "RESPONSÁVEIS";
 $nome_tela = "assuntos vinculados";
@@ -12,14 +9,15 @@ include_once '../sistema/topo.php';
 ?>
 
 <?php 
-if ( !isset($_GET['id']) ) {
-    echo "ID inválido.<br>";
-    include_once '../sistema/rodape.php';
-    return;
+
+if (isset($_GET['id']) && $_SESSION['admin']) {
+        $idResponsavelAssuntos = $_GET['id'];
+} else {
+        $idResponsavelAssuntos = $_SESSION['id'];
 }
 
 $obj = new Responsavel();
-$obj->id=$_GET['id'];
+$obj->id=$idResponsavelAssuntos;
 $dados = $obj->retornarunico(); 
 $id_responsavel = $dados->id;
 $nome_responsavel = $dados->nome;
@@ -28,7 +26,7 @@ $complemento_sql = " where id_responsavel=".$dados->id;
 
 <h3 class="text-capitalize">Responsável: <?php echo $id_responsavel." - ".$nome_responsavel ?></h3>
 
-<a href='responsaveis-listar.php' class='btn btn-default'>Voltar</a> &nbsp; &nbsp;&nbsp; &nbsp;
+<a href='<?php echo ($_SESSION["admin"]) ? "responsaveis-listar.php" : "responsaveis-unico.php"; ?>' class='btn btn-default'>Voltar</a> &nbsp; &nbsp;&nbsp; &nbsp;
 
 
 <?php // MOSTA O GET PARA A CHAMADA DO resp-assuntos-add.php

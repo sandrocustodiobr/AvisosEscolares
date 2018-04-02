@@ -42,9 +42,13 @@ $saida = "<tr><td>ID</td><td>$dados->id</td></tr>
           <tr>
             <td>";
 
-if ($o_proprio) { $saida .= "<a href='muda_senha.php' class='btn btn-warning'>Mudar Senha</a><br><br>"; }
+if ($o_proprio) { $saida .= "<a href='muda_senha.php' class='btn btn-warning'>Mudar Senha</a>&nbsp;&nbsp;&nbsp;"; }
 
-$saida .=      "<a href='responsaveis-listar.php' class='btn btn-default'>Voltar</a>
+$saida .= "<a href='resp-assuntos.php?id='".$dados->id."' class='btn btn-warning'>Assuntos vinculados</a>"
+        . "<br><br>";
+$saida .= "<a href='";
+$saida .= ($_SESSION["admin"]) ? "responsaveis-listar.php" : "../sistema/index.php";
+$saida .= "' class='btn btn-default'>Voltar</a>
             </td>
             <td></td>
           </tr>";

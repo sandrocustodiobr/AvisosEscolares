@@ -1,7 +1,15 @@
 <?php
 session_start();
-if ( isset($_SESSION['logado']) && isset($_SESSION['id']) && !$_SESSION['admin'] ){
-    header("location:responsaveis-unico.php");
+if (isset($_GET['id_responsavel'])) {
+    if ($_GET['id_responsavel'] == $_SESSION['id']) {
+        $idResponsavelAssuntos = $_SESSION['id'];
+    } elseif ($_SESSION['admin']) {
+        $idResponsavelAssuntos = $_GET['id_responsavel'];
+    } else { // se id for direrente e não for admin
+        header("location:responsaveis-unico.php");
+    }
+} else {
+    header("location:responsaveis-listar.php");
 }
 
 $nome_modulo = "RESPONSÁVEIS";
@@ -28,7 +36,12 @@ $filtros_get     = $objFiltro->get(); */
 <a href='resp-assuntos.php?id=<?php echo $_GET['id_responsavel']; ?>' class='btn btn-default'>Voltar</a> &nbsp;
 <!-- <label>Filtro(s): </label>&nbsp;<?php //echo $filtros_tela; ?>&nbsp;&nbsp;&nbsp; -->
 
-<?php // TABELA
+<?php 
+
+
+
+
+// TABELA
 
 $objAss = new Assunto();
 $listar=$objAss->listar(); // AQUI SE APLICAM OS FILTROS usando $complemento_sql
@@ -51,10 +64,9 @@ foreach ($listar as $dados){
     <td>'.$dados->id.'</td>
     <td>'.$dados->nomecurto.'</td>
     <td>'.$dados->descricao.'</td>
-    <td>'.$dados->ano_semestre.'</td>
-    <td>'.$dados->id_curso.'-'.$dados->nome_curso.'</td>
-    <td>'.$link_assunto.'</td>
-    </tr>';
+    <td>'.$dados->ano_semestre.'</td><td>';
+    $saida .= ($dados->id_curso > 0) ? $dados->id_curso.'-'.$dados->nome_curso : "(Todos)";
+    $saida .= '</td><td>'.$link_assunto.'</td> </tr>';
 }
 ?>
 

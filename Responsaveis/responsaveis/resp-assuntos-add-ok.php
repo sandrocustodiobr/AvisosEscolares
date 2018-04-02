@@ -1,7 +1,15 @@
 <?php
 session_start();
-if ( isset($_SESSION['logado']) && isset($_SESSION['id']) && !$_SESSION['admin'] ){
-    header("location:responsaveis-unico.php");
+if (isset($_GET['id_responsavel'])) {
+    if ($_GET['id_responsavel'] == $_SESSION['id']) {
+        $idResponsavelAssuntos = $_SESSION['id'];
+    } elseif ($_SESSION['admin']) {
+        $idResponsavelAssuntos = $_GET['id_responsavel'];
+    } else { // se id for direrente e não for admin
+        header("location:responsaveis-unico.php");
+    }
+} else {
+    header("location:responsaveis-listar.php");
 }
 
 $nome_modulo = "RESPONSÁVEIS";
@@ -15,11 +23,12 @@ include_once '../sistema/topo.php';
 
 echo "Enviando...<br>";
 
-if ( !isset($_GET['id_responsavel']) || !isset($_GET['id_assunto']) ) {
-    echo "Dados inválidos.<br>";
-    include_once '../sistema/rodape.php';
-    return;
-}
+// anulado pelos if acima, junto ao session_start()
+//if ( !isset($_GET['id_responsavel']) || !isset($_GET['id_assunto']) ) {
+//    echo "Dados inválidos.<br>";
+//    include_once '../sistema/rodape.php';
+//    return;
+//}
 
 $objResp = new RespAssunto();
 $objResp->id_responsavel=strip_tags($_GET['id_responsavel']);

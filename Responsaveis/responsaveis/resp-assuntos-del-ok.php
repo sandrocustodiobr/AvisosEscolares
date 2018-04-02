@@ -1,7 +1,15 @@
 <?php
 session_start();
-if ( isset($_SESSION['logado']) && isset($_SESSION['id']) && !$_SESSION['admin'] ){
-    header("location:responsaveis-unico.php");
+if (isset($_GET['id_responsavel'])) {
+    if ($_GET['id_responsavel'] == $_SESSION['id']) {
+        $idResponsavelAssuntos = $_SESSION['id'];
+    } elseif ($_SESSION['admin']) {
+        $idResponsavelAssuntos = $_GET['id_responsavel'];
+    } else { // se id for direrente e não for admin
+        header("location:responsaveis-unico.php");
+    }
+} else {
+    header("location:responsaveis-listar.php");
 }
 
 $nome_modulo = "RESPONSÁVEIS";
