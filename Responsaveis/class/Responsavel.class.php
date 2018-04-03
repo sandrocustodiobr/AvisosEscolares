@@ -76,8 +76,21 @@ class Responsavel {
     
     public function editar() {
         $retorno = false;
-        $sql = "update $this->tabela set nome='$this->nome', admin='$this->admin', email='$this->email', senha='$this->senha' 
-            where id=$this->id";
+        $sql = "update $this->tabela set "
+                . "nome='$this->nome', "
+                . "admin='$this->admin', "
+                . "email='$this->email' "
+                . "where id=$this->id";
+        //echo "<br>Query: ".$sql."<br>";
+        $retorno = mysqli_query($this->link, $sql);
+        return $retorno;
+    }
+    
+    public function novasenha() {
+        $retorno = false;
+        $sql = "update $this->tabela set "
+                . "senha='$this->senha' "
+                . "where id=$this->id";
         //echo "<br>Query: ".$sql."<br>";
         $retorno = mysqli_query($this->link, $sql);
         return $retorno;

@@ -18,7 +18,6 @@ $obj->id=$_POST['id'];
 $obj->nome =strip_tags($_POST['nome']);
 $obj->admin=strip_tags($_POST['admin']);
 $obj->email=strip_tags($_POST['email']);
-$obj->senha=strip_tags($_POST['senha']);
 //$obj->MostraDados();
 $feito = $obj->editar();
 

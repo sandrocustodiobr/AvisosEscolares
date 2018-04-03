@@ -42,7 +42,7 @@ $saida = "<tr><td>ID</td><td>$dados->id</td></tr>
           <tr>
             <td>";
 
-if ($o_proprio) { $saida .= "<a href='muda_senha.php' class='btn btn-warning'>Mudar Senha</a>&nbsp;&nbsp;&nbsp;"; }
+if ($o_proprio) { $saida .= "<a href='muda_senha.php?id_mudar_senha=$dados->id' class='btn btn-warning'>Mudar Senha</a>&nbsp;&nbsp;&nbsp;"; }
 
 $saida .= "<a href='resp-assuntos.php?id='".$dados->id."' class='btn btn-warning'>Assuntos vinculados</a>"
         . "<br><br>";

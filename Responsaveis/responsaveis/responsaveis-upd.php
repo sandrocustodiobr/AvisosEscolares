@@ -41,9 +41,6 @@ include_once '../sistema/topo.php';
         <label>Email:</label>
         <input class="form-control" name="email" type="email" value="<?php echo $item->email; ?>" maxlength="50"/><br>
 
-        <label>Senha:</label>
-        <input class="form-control" name="senha" type="password" value="<?php echo $item->senha; ?>" maxlength="50"/><br>
-
         <button type="submit" name="botao" value="Enviar" class="btn btn-success">Enviar</button> &nbsp;&nbsp;
         <button type="reset" class="btn btn-danger">Limpar</button> &nbsp;&nbsp;
         <a href='responsaveis-listar.php' class='btn btn-default'>Voltar</a>

@@ -106,12 +106,6 @@ $pasta_upload    = "../../arquivos_upload/";
                         <p>Cursos</p>
                     </a>
                 </li>
-                <li <?php if ($nome_modulo == "TIPOS de NOTÍCIA") { echo 'class="active"'; }?>>
-                    <a href="../tiponoticia/tiponoticia.php">
-                        <i class="pe-7s-tools"></i>
-                        <p>Tipo de Notícia/Aviso</p>
-                    </a>
-                </li>
                 <li <?php if ($nome_modulo == "RESPONSÁVEIS") { echo 'class="active"'; }?>>
                     <a href="../responsaveis/responsaveis-listar.php">
                         <i class="pe-7s-user"></i>
