@@ -18,7 +18,6 @@ function DataParaGravacao($pData) {
 echo DataParaGravacao($_POST['data_publicacao'])."<br>";
 echo DataParaGravacao($_POST['data_evento'])    ."<br>";
 echo DataParaGravacao($_POST['data_validade'])  ."<br>";
-echo $_POST['id_tiponoticia']."<br>";
 echo $_POST['id_assunto']    ."<br>";
 echo $_POST['id_responsavel']."<br>";
 echo $_POST['texto']         ."<br>";
@@ -32,7 +31,6 @@ $obj->id            =$_POST['id'];
 $obj->data_publicacao=$_POST['data_publicacao']; // DataParaGravacao($_POST['data_publicacao']); // modo anterior
 $obj->data_evento    =$_POST['data_evento'];
 $obj->data_validade  =$_POST['data_validade'];
-$obj->id_tiponoticia=$_POST['id_tiponoticia'];
 $obj->id_assunto    =$_POST['id_assunto'];
 $obj->id_responsavel=$_POST['id_responsavel'];
 $obj->titulo        = strip_tags($_POST['titulo']);

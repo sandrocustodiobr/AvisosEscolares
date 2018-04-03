@@ -24,7 +24,6 @@ if ( $dados->admin ) { $temp = "<tr><td>Admin</td><td>Sim</td></tr>"; }
 $saida = "<tr><td><small>Publicado em</small></td> <td><small>$dados->data_publicacao</small></td></tr>
           <tr><td>Data Evento</td>  <td>$dados->data_evento</td></tr>
           <tr><td>Validade</td>     <td>$dados->data_validade</td></tr>
-          <tr><td>Tipo Notícia</td> <td>$dados->tiponoticia</td></tr>
           <tr><td>Curso</td>        <td>";
 $saida .= ($dados->id_curso > 0) ? $dados->nome_curso : "(Todos)";
 $saida .= "</td></tr>

@@ -5,7 +5,6 @@ class Noticia {
     private $data_publicacao;
     private $data_evento;
     private $data_validade;
-    private $id_tiponoticia;
     private $id_assunto;
     private $id_responsavel;
     private $texto;
@@ -17,7 +16,6 @@ class Noticia {
     private $id_curso;
     private $nome_curso;
     private $nome_responsavel;
-    private $tiponoticia;
     private $ano_semestre;
 
     private $tabela;
@@ -35,7 +33,6 @@ class Noticia {
         $this->data_publicacao = '';
         $this->data_evento = '';
         $this->data_validade = '';
-        $this->id_tiponoticia = 0;
         $this->id_assunto = 0;
         $this->id_responsavel = 0;
         $this->id_curso = 0;
@@ -65,7 +62,6 @@ class Noticia {
             . "data_publicacao,"
             . "data_evento,"
             . "data_validade,"
-            . "id_tiponoticia,"
             . "id_assunto,"
             . "id_responsavel,"
             . "titulo,"
@@ -76,7 +72,6 @@ class Noticia {
             . "'$this->data_publicacao',"
             . "'$this->data_evento',"
             . "'$this->data_validade',"
-            . "$this->id_tiponoticia,"
             . "$this->id_assunto,"
             . "$this->id_responsavel,"
             . "'$this->titulo',"
@@ -99,13 +94,11 @@ class Noticia {
                 . " Assunto.ano_semestre as ano_semestre,"
                 . " Assunto.id_curso as id_curso,"
                 . " Curso.nomecurto as nome_curso,"
-                . " Responsavel.nome as nome_responsavel,"
-                . " TipoNoticia.descricao as tiponoticia"
+                . " Responsavel.nome as nome_responsavel"
                 . " FROM $this->tabela "
                 . "INNER JOIN Assunto     ON Assunto.id      = $this->tabela.id_assunto "
                 . "LEFT JOIN Curso       ON Assunto.id_curso= Curso.id "
                 . "INNER JOIN Responsavel ON Responsavel.id  = $this->tabela.id_responsavel "
-                . "INNER JOIN TipoNoticia ON TipoNoticia.id  = $this->tabela.id_tiponoticia "
                 . $complemento
                 . " ORDER BY $this->tabela.data_evento DESC, $this->tabela.data_publicacao DESC";
         if ($this->debug) { echo "<br>$sql<br>"; }
@@ -120,7 +113,6 @@ class Noticia {
             $obj->data_publicacao = $reg['data_publicacao'];
             $obj->data_evento = $reg['data_evento'];
             $obj->data_validade = $reg['data_validade'];
-            $obj->id_tiponoticia = $reg['id_tiponoticia'];
             $obj->id_assunto = $reg['id_assunto'];
             $obj->id_responsavel = $reg['id_responsavel'];
             $obj->titulo = $reg['titulo'];
@@ -131,7 +123,6 @@ class Noticia {
             $obj->id_curso = $reg["id_curso"];
             $obj->nome_curso = $reg["nome_curso"];
             $obj->nome_responsavel = $reg["nome_responsavel"];
-            $obj->tiponoticia = $reg['tiponoticia'];
             $obj->ano_semestre = $reg['ano_semestre'];
             
             $retorno[] = $obj;
@@ -150,7 +141,6 @@ class Noticia {
             . "data_publicacao='$this->data_publicacao',"
             . "data_evento='$this->data_evento',"
             . "data_validade='$this->data_validade',"
-            . "id_tiponoticia=$this->id_tiponoticia,"
             . "id_assunto=$this->id_assunto,"
             . "id_responsavel=$this->id_responsavel,"
             . "titulo='$this->titulo', "
@@ -170,14 +160,13 @@ class Noticia {
                 . " Assunto.ano_semestre as ano_semestre,"
                 . " Assunto.id_curso as id_curso,"
                 . " Curso.nomecurto as nome_curso,"
-                . " Responsavel.nome as nome_responsavel,"
-                . " TipoNoticia.descricao as tiponoticia"
+                . " Responsavel.nome as nome_responsavel"
                 . " FROM $this->tabela "
                 . "INNER JOIN Assunto     ON Assunto.id      = $this->tabela.id_assunto "
                 . "LEFT  JOIN Curso       ON Assunto.id_curso= Curso.id "
                 . "INNER JOIN Responsavel ON Responsavel.id  = $this->tabela.id_responsavel "
-                . "INNER JOIN TipoNoticia ON TipoNoticia.id  = $this->tabela.id_tiponoticia "
                 . "WHERE $this->tabela.id=$this->id";
+        if ($this->debug) { echo "<br>$sql<br>"; }
         
         
         $resultado = mysqli_query($this->link, $sql);
@@ -199,7 +188,6 @@ class Noticia {
             $obj1->data_publicacao = $reg['data_publicacao'];
             $obj1->data_evento = $reg['data_evento'];
             $obj1->data_validade = $reg['data_validade'];
-            $obj1->id_tiponoticia = $reg['id_tiponoticia'];
             $obj1->id_assunto = $reg['id_assunto'];
             $obj1->id_responsavel = $reg['id_responsavel'];
             $obj1->titulo = $reg['titulo'];
@@ -210,7 +198,6 @@ class Noticia {
             $obj1->nome_assunto = $reg['nome_assunto'];
             $obj1->id_curso = $reg["id_curso"];
             $obj1->nome_curso = $reg["nome_curso"];
-            $obj1->tiponoticia = $reg['tiponoticia'];
             $obj1->ano_semestre = $reg['ano_semestre'];
             
             $retorno = $obj1;
@@ -234,7 +221,6 @@ class Noticia {
         $temp45 .= "ID=$this->id / data_publicacao=$this->data_publicacao"
             . " / data_evento=$this->data_evento"
             . " / data_validade=$this->data_validade"
-            . " / id_tiponoticia=$this->id_tiponoticia"
             . " / id_assunto=$this->id_assunto"
             . " / id_responsavel=$this->id_responsavel"
             . " / titulo=$this->titulo"
@@ -244,7 +230,6 @@ class Noticia {
             . " / nome_responsavel=$this->nome_responsavel"
             . " / nome_assunto=$this->nome_assunto"
             . " / nome_curso=$this->nome_curso"
-            . " / tiponoticia=$this->tiponoticia"
             . "<br>";
         echo $temp45;
         return true;

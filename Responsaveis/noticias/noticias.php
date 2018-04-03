@@ -193,5 +193,7 @@ foreach ($listar as $dados){
         <?php echo $saida; ?>
     </table>
 </div>
-    
-    </div>
+
+<?php
+include_once '../sistema/rodape.php';
+?>

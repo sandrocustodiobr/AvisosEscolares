@@ -20,7 +20,6 @@ if (isset($_GET["tipo"]) && ( $_GET["tipo"] == 'imagem' || $_GET["tipo"] == 'ane
     $obj3->id = $_GET["id"];
     $item78 = $obj3->retornarunico();
     //$item78->MostraDados();
-    $select_tiponoticia = $item78->id_tiponoticia;
 } else {
     header("Tipo não informado.");
 }

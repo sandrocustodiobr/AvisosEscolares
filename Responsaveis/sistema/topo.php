@@ -125,7 +125,7 @@ $pasta_upload    = "../../arquivos_upload/";
                     </a>
                 </li>
 		<li class="active-pro">
-                    <a href="../../Avisos/index.php" append="_blank">
+                    <a href="../../Avisos/index.php" target="_blank">
                         <i class="pe-7s-rocket"></i>
                         Visualizando Notícias/Avisos
                     </a>

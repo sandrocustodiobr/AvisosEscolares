@@ -80,7 +80,6 @@ $obj = new Noticia();
 $obj->data_publicacao=$_POST['data_publicacao'];
 $obj->data_evento    =$_POST['data_evento'];
 $obj->data_validade  =$_POST['data_validade'];
-$obj->id_tiponoticia =$_POST['id_tiponoticia'];
 $obj->id_assunto     =$_POST['id_assunto'];
 $obj->id_responsavel =$_POST['id_responsavel'];
 $obj->titulo         =strip_tags($_POST['titulo']);

@@ -15,7 +15,7 @@
                     </ul>
                 </nav>
                 <p class="copyright pull-right">
-                    &copy; <script>document.write(new Date().getFullYear())</script> <a href="http://sandrocustodio.blogspot.com">Sandro Custódio</a>. Be a simple man!
+                    &copy; <script>document.write(new Date().getFullYear())</script> <a href="http://www.santana.ifsul.edu.br/" target="_blank">IFSul</a>
                 </p>
             </div>
         </footer>
