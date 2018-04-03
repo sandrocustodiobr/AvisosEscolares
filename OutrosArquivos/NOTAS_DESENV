@@ -1,14 +1,10 @@
-SENHA: 
-- Classe/métodos e md5
-- retirar senha da edicao
-- redefinir senha (o próprio ou um admin)
+A fazer:
+- Topo Avisos, funcionar no celular
+- Melhorar Frontend
 
-commit atual   : "Removido Tipo de Notícia do sistema."
-commit anterior: "Chekbox Admin no login."
+commit atual   : "Mudar Senha concluido e senha com criptografia."
+commit anterior: "Removido Tipo de Notícia do sistema."
 
-SENHA
-gerar hash senha inicial 123
-salt (add)
 
 FUTURO (talvez)
 bloquear usuario
