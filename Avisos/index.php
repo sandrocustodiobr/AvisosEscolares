@@ -80,7 +80,7 @@ foreach ($listar as $dados){
                     $dados->texto .
          '     <p style="color: green"><small>Por: ' . $dados->nome_responsavel . '. Val: ' . $data_validade . '</small></p>';
     if (strlen($dados->anexo)) {
-        echo ' <p><a href="' . $pasta_upload . $dados->anexo . '" target="_blank"> >>> VER ANEXO <<< </a></p>';
+        echo ' <p><a href="' . $pasta_upload . $dados->anexo . '" target="_blank"> ANEXO AQUI </a></p>';
     }
     if (strlen($dados->imagem)) {
         echo ' <p><a href="' . $pasta_upload . $dados->imagem . '" target="_blank"><img src="' . $pasta_upload . $dados->imagem . '" width="235" height="235"></a></p>';
@@ -110,7 +110,6 @@ if ($cont == 0) {
 ?>
 
         <div class="col-sm-3 col-lg-3">
-
             <!-- FILTROS -->
             <div class="dash-unit" style="background-color: #003500">
                 <dtitle style="color: lightgreen">FILTROS ATIVOS - <?php echo $data_hoje; ?></dtitle>
@@ -131,18 +130,8 @@ if ($cont == 0) {
                     <a href="filtros.php" class="btn btn-default">Alterar Filtros</a>
                 </div>	
             </div>
-
-            <!-- SERVER UPTIME -->
-            <!--div class="half-unit" style="background-color: #003500">
-                <dtitle>ALTERAR FILTROS</dtitle>
-                <hr>
-                <div class="cont">
-                    <a href="filtros.php" class="btn btn-default">Alterar Filtros</a>
-                </div>
-
-            </div -->
-
         </div>
+        
     </div><!-- /row -->
 
     <!-- NOVAS LINHAS ENTRAM AQUI -->

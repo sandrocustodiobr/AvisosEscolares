@@ -89,27 +89,26 @@
   	<!-- NAVIGATION MENU -->
 
     <div class="navbar-nav navbar-inverse navbar-fixed-top" style="background-color: #003500">
-        <div class="container">
+      <div class="container">
         <div class="navbar-header">
-          <!--button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </button-->
-          
+          </button>
         </div> 
-          <div class="navbar-collapse collapse">
-              <a class="navbar-brand" href="index.php">
-                  <img src="images/Logotipo_IF.png" height="25">
-              </a>  
-              <a class="navbar-brand" href="index.php">
-                  <span style="color: lightgreen">AVISOS/NOTÍCIAS IFSUL</span>
-              </a>  
+        <div class="navbar-collapse collapse">
+            <a class="navbar-brand" href="index.php">
+                <img src="images/Logotipo_IF.png" height="23">
+            </a>  
+            <a class="navbar-brand" href="index.php">
+                <span style="color: lightgreen">Avisos/Notícias IFSul</span>
+            </a>  
             <ul class="nav navbar-nav">
-              <li <?php if ($nome_tela=="index") { echo 'class="active"'; } ?> ><a href="index.php"><i class="icon-home icon-white"></i> Home</a></li>                            
-              <li <?php if ($nome_tela=="filtros" || $nome_tela=="cookiesok" ) { echo 'class="active"'; } ?> ><a href="filtros.php"><i class="icon-th icon-white"></i> Filtros</a></li>
+              <li <?php echo ($nome_tela=="index")    ? 'class="active"' : ''; ?> ><a href="index.php"><i class="icon-home icon-white"></i> Home</a></li>                            
+              <li <?php echo ($nome_tela=="filtros" ) ? 'class="active"' : ''; ?> ><a href="filtros.php"><i class="icon-th icon-white"></i> Filtros</a></li>
               <li><a href="../Responsaveis/sistema/login.php"><i class="fa fa-sign-in"></i></a></li>
             </ul>
-          </div><!--/.nav-collapse -->
-        </div>
+        </div><!--/.nav-collapse -->
+      </div>
     </div>
