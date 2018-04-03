@@ -60,7 +60,11 @@ if ($_SESSION["logado"]) {
                                     <input class="form-control" placeholder="Email" name="email" type="text" autofocus>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Senha" name="senha" type="password" autofocus>
+                                    <input class="form-control" placeholder="Senha" name="senha" type="password">
+                                </div>
+                                <div class="form-group">
+                                    <span style="font-family: sans-serif; color: lightgrey" >Admin: </span>
+                                    <input class="checkbox-inline checked" name="admin" type="checkbox">
                                 </div>
                                 <button class="btn btn-lg btn-success btn-block" type="submit" value="Enviar" name="botao">Enviar</button>
                             </fieldset>

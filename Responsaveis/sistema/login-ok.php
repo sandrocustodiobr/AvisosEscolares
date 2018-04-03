@@ -58,7 +58,9 @@
                             $objUsuario->senha = strip_tags($_POST['senha']);
                             $login = $objUsuario->login();
                             if ($login) {
-                                $_SESSION["admin"] = $login->admin;
+                                if ($login->admin && $_POST['admin'] == 'on') {
+                                    $_SESSION["admin"] = $login->admin;
+                                }
                                 $_SESSION["logado"] = true;
                                 $_SESSION["id"] = $login->id;
                                 $_SESSION["nome"] = $login->name;

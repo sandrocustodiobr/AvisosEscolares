@@ -1,21 +1,21 @@
-NOTICIA
-- tag Admin no login
-- Mostrar Meus Assuntos Vinculados no Ver (único) do responsável não admin;
+NOTICIA: 
+- Remover Tipo de Notícia do sistema
+SENHA: 
+- Classe/métodos e md5
+- retirar senha da edicao
+- redefinir senha (o próprio ou um admin)
 
-
-commit atual   : "Auto atrib de Assuntos para o proprio Resp."
-commit anterior: "Restringir aos Assuntos do Reponsável no noticias.php (listar) os botões Editar e Excluir."
+commit atual   : "Chekbox Admin no login."
+commit anterior: "Auto atrib de Assuntos para o proprio Resp."
 
 SENHA
 gerar hash senha inicial 123
-md5 + salt (add)
-retirar senha da edicao
-redefinir senha (o próprio ou um admin)
+salt (add)
 
 FUTURO (talvez)
 bloquear usuario
-bloquear noticia
-resetar ou recuperar senha (enviar por email)
+ocultar noticia
+resetar ou recuperar senha (por email)
 
 
 
