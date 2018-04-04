@@ -39,19 +39,6 @@ CREATE TABLE `Assunto` (
 -- Fazendo dump de dados para tabela `Assunto`
 --
 
-INSERT INTO `Assunto` (`id`, `id_curso`, `nomecurto`, `descricao`, `ano_semestre`, `imagem`) VALUES
-(1, 1, 'CEEP I', 'ComunicaÃ§Ã£o e ExpressÃ£o PortuguÃªs Enpanhol', 1, ''),
-(2, 2, 'CEEP II', 'ComunicaÃ§Ã£o e ExpressÃ£o PortuguÃªs Enpanhol', 2, 'pppppppppppp'),
-(3, 6, 'CPW II', 'ConstruÃ§Ã£o de PÃ¡ginas Web II', 2, 'jjjj'),
-(6, 5, 'CEEP I', 'ComunicaÃ§Ã£o e ExpressÃ£o', 1, 'aaaaaaaaaaa'),
-(9, 1, 'CPW I', 'ConstruÃ§Ã£o de PÃ¡ginas Web', 2, ''),
-(10, 6, 'CPW I', 'ConstruÃ§Ã£o de PÃ¡ginas Web bb', 3, 'nnn'),
-(12, 0, 'Registro', 'Registro AcadÃªmico', 0, '');
-
---
--- Índices de tabelas apagadas
---
-
 --
 -- Índices de tabela `Assunto`
 --

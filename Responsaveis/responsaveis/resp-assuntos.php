@@ -61,19 +61,19 @@ foreach ($listar as $dados){
     $saida .= '<tr>
     <td>'.$dados->nome_curso .'</td>
     <td>'.$dados->nome_assunto.'</td>
-    <td><a href="resp-assuntos-unico.php'.$get_resp.'&id_assunto='.$dados->id.'" class="btn btn-primary">Ver</a>  &nbsp; &nbsp;
-        <a href="resp-assuntos-del-ok.php'.$get_resp.'&id='.$dados->id.'" title="Desvicular assunto." class="btn btn-danger">Desvincular</a></td>
+    <td>'.$dados->ano_semestre.'º</td>
+    <td><a href="resp-assuntos-del-ok.php'.$get_resp.'&id='.$dados->id.'" title="Desvicular assunto." class="btn btn-danger">Desvincular</a></td>
     </tr>'; 
 }
 
 if ($saida == '') {
-    $saida = '<td></td><td>(sem assuntos vinculados)</td><td></td>';
+    $saida = '<td></td><td>(sem assuntos vinculados)</td><td></td><td></td>';
 }
 ?>
 
 <div class="content table-responsive table-full-width">
     <table class="table table-hover table-striped">
-        <tr><th>Curso</th><th>Assunto</th><th>Ver/Desvincular</th></tr>
+        <tr><th>Curso</th><th>Assunto</th><th>Ano/Sem</th><th>Desvincular</th></tr>
         <?php echo $saida; ?>
     </table>
 </div>

@@ -1,12 +1,10 @@
 A fazer:
-- Melhorar Frontend
+- bloquear usuario
 
-commit atual   : "NOTAS_DESENV"
-commit anterior: "Ajustes comit."
-
+commit atual   : "Ajustes arquivos sql e em RespAssunto (lista)."
+commit anterior: "..."
 
 FUTURO (talvez)
-bloquear usuario
 ocultar noticia
 resetar ou recuperar senha (por email)
 

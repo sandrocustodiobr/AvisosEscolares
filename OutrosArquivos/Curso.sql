@@ -36,16 +36,6 @@ CREATE TABLE `Curso` (
 -- Fazendo dump de dados para tabela `Curso`
 --
 
-INSERT INTO `Curso` (`id`, `nomecurto`, `nomelongo`) VALUES
-(1, 'TII-Sub', 'TÃ©cnico em InformÃ¡tica para Internet - Subsequente'),
-(2, 'TII-Int', 'TÃ©cnico em InformÃ¡tica para Internet - Integrado'),
-(5, 'SER Int', 'Sistemas de Energias RenovÃ¡veis - Integrado'),
-(6, 'SER Sub', 'Sistemas de Energias RenovÃ¡veis - Subsequente');
-
---
--- Índices de tabelas apagadas
---
-
 --
 -- Índices de tabela `Curso`
 --

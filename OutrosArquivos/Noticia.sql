@@ -31,7 +31,6 @@ CREATE TABLE `Noticia` (
   `data_publicacao` date NOT NULL,
   `data_evento` date NOT NULL,
   `data_validade` date NOT NULL,
-  `id_tiponoticia` int(11) NOT NULL,
   `id_assunto` int(11) NOT NULL,
   `id_responsavel` int(11) NOT NULL,
   `titulo` varchar(100) NOT NULL,
@@ -61,7 +60,6 @@ ALTER TABLE `Noticia`
 -- Restrições para tabelas `Noticia`
 --
 ALTER TABLE `Noticia`
-  ADD CONSTRAINT `Noticia_ibfk_1` FOREIGN KEY (`id_tiponoticia`) REFERENCES `TipoNoticia` (`id`),
   ADD CONSTRAINT `Noticia_ibfk_2` FOREIGN KEY (`id_assunto`) REFERENCES `Assunto` (`id`),
   ADD CONSTRAINT `Noticia_ibfk_3` FOREIGN KEY (`id_responsavel`) REFERENCES `Responsavel` (`id`);
 

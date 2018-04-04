@@ -31,26 +31,14 @@ CREATE TABLE `Responsavel` (
   `nome` varchar(50) NOT NULL,
   `admin` tinyint(1) NOT NULL DEFAULT '0',
   `email` varchar(50) NOT NULL,
-  `senha` varchar(50) NOT NULL
+  `senha` varchar(50) NOT NULL,
+  `bloqueado` tinyint(1) NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Fazendo dump de dados para tabela `Responsavel`
 --
 
-INSERT INTO `Responsavel` (`id`, `nome`, `admin`, `email`, `senha`) VALUES
-(1, 'Anibal de castro', 1, 'anibal@asd.com', '123'),
-(2, 'Tadeu Silva', 0, 'tadeu@asd.org', '123'),
-(3, 'Sandrinho da Silva', 0, 'asd@asd.com', '123'),
-(6, 'Kibe frito', 0, 'asdfgh@asd.com', '1234'),
-(11, 'Tarifador Maludo', 0, 'tarifador@asd.com', '097'),
-(12, 'Tarifador Maludo', 1, 'tarifador@asd.com', '4456'),
-(13, 'Tarifador Maludo', 1, 'tarifadors@dfg.com', '123345'),
-(14, 'Fulan de tal da silva', 0, 'adsfasfasdf@asdasds.com', '1111111111111111111');
-
---
--- Índices de tabelas apagadas
---
 
 --
 -- Índices de tabela `Responsavel`

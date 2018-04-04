@@ -7,6 +7,7 @@ class RespAssunto {
     private $nome_assunto;
     private $nome_curso;
     private $id_curso;
+    private $ano_semestre;
 
 
     private $tabela;
@@ -55,6 +56,7 @@ class RespAssunto {
         $sql = "SELECT $this->tabela.*,"
                 ." Assunto.nomecurto as nome_assunto,"
                 ." Curso.nomecurto as nome_curso,"
+                ." Assunto.ano_semestre,"
                 ." Assunto.id_curso"
                 ." FROM $this->tabela "
                 ."INNER JOIN Assunto ON Assunto.id=$this->tabela.id_assunto "
@@ -74,6 +76,7 @@ class RespAssunto {
             $obj->nome_assunto = $reg["nome_assunto"];
             $obj->nome_curso = $reg["nome_curso"];
             $obj->id_curso = $reg["id_curso"];
+            $obj->ano_semestre = $reg["ano_semestre"];
             
             $retorno[] = $obj;
         }
