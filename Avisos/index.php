@@ -62,7 +62,7 @@ foreach ($listar as $dados){
     if ( $dados->ano_semestre > 0 ) {
         $tmpAnoSem   = $dados->ano_semestre . "º";
     } else {
-        $tmpAnoSem   = "geral";
+        $tmpAnoSem   = "GERAL";
     }
     
     
@@ -72,7 +72,9 @@ foreach ($listar as $dados){
     } else {
         echo '<div class="dash-unit" style="background-color: #003500">';
     }
-    echo '   <dtitle style="color: lightgreen">' . $dados->nome_curso . ' - ' . $tmpAnoSem . ' - ' .$data_evento . '</dtitle>' .
+    echo '   <dtitle style="color: lightgreen">';
+    echo ($dados->id_curso > 0) ? $dados->nome_curso : 'TODOS';
+    echo ' - ' . $tmpAnoSem . ' - ' .$data_evento . '</dtitle>' .
          '   <hr>' .
          '   <div class="text">' .
          '     <p align="center"><b>' . $dados->nome_assunto . '</b><br>' .

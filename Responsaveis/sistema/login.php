@@ -59,7 +59,7 @@ if ($_SESSION["logado"]) {
                 ?>
                 <div class="login-panel panel panel-default panel-primary">
                     <div class="panel-heading">
-                        <h3 class="panel-title">NOTÍCIAS/AVISOS IFSUL</h3>
+                        <h3 class="panel-title"><a href="../../Avisos/index.php">NOTÍCIAS/AVISOS IFSUL</a></h3>
                     </div>
                     <div class="panel-body">
                         <form method="POST" action="login-ok.php">
