@@ -66,7 +66,7 @@ foreach ($listar as $dados){
     }
     
     
-    echo '<div class="col-sm-3 col-lg-3" style="background-color: #003500">';
+    echo '<div class="col-sm-3 col-lg-3">';
     if (strlen($dados->anexo)+strlen($dados->imagem) > 0) {
         echo '<div class="dash-unit dash-unit-maisalta" style="background-color: #003500">';
     } else {
@@ -94,7 +94,7 @@ foreach ($listar as $dados){
 }
 
 if ($cont == 0) {
-    echo '<div class="col-sm-3 col-lg-3" style="background-color: #003500">' .
+    echo '<div class="col-sm-3 col-lg-3">' .
          ' <div class="dash-unit" style="background-color: #003500">' .
          '   <dtitle> Mensagem: </dtitle>' .
          '   <hr>' .
