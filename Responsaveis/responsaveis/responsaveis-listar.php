@@ -85,9 +85,14 @@ foreach ($listar as $dados){
     <td><a href="resp-assuntos.php?id='.$dados->id.'" class="btn btn-warning">Assuntos vinculados</a></td>
     <td><a href="responsaveis-unico.php?id='.$dados->id.'" class="btn btn-primary">Ver</a>
         <a href="responsaveis-upd.php?id='.$dados->id.'" class="btn btn-warning">Editar</a>
-        <a href="muda_senha.php?id_mudar_senha='.$dados->id.'" class="btn btn-warning">Mudar Senha</a></td>
-    <td><a href="responsaveis-del.php?id='.$dados->id.'" class="btn btn-danger">Excluir</a></td>
-    </tr>';
+        <a href="muda_senha.php?id_mudar_senha='.$dados->id.'" class="btn btn-warning">Senha</a></td>
+    <td>';
+    if ($dados->bloqueado) {
+        $saida .= '<a href="responsaveis-lock-ok.php?id='.$dados->id.'&acao=desbloquear" class="btn btn-danger">Desbloquear</a>';
+    } else {
+        $saida .= '<a href="responsaveis-lock-ok.php?id='.$dados->id.'&acao=bloquear" class="btn btn-warning">Bloquear</a>';
+    }
+    $saida .= '<a href="responsaveis-del.php?id='.$dados->id.'" class="btn btn-danger">Excluir</a></td> </tr>';
 }
 ?>
 

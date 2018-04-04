@@ -33,7 +33,8 @@ $obj->id=$id;
 $dados = $obj->retornarunico();
 
 $temp = "";
-if ( $dados->admin ) { $temp = "<tr><td>Admin</td><td>Sim</td></tr>"; }
+if ( $dados->admin ) { $temp .= "<tr><td>Admin</td><td>Sim</td></tr>"; }
+if ( $dados->bloqueado ) { $temp .= "<tr><td>AVISO:</td><td>(Usuário Bloqueado)</td></tr>"; }
 
 $saida = "<tr><td>ID</td><td>$dados->id</td></tr>
           <tr><td>Nome</td><td>$dados->nome</td></tr>
@@ -42,7 +43,7 @@ $saida = "<tr><td>ID</td><td>$dados->id</td></tr>
           <tr>
             <td>";
 
-if ($o_proprio || $_SESSION["admin"]) { $saida .= "<a href='muda_senha.php?id_mudar_senha=$dados->id' class='btn btn-warning'>Mudar Senha</a>&nbsp;&nbsp;&nbsp;"; }
+if ($o_proprio || $_SESSION["admin"]) { $saida .= "<a href='muda_senha.php?id_mudar_senha=$dados->id' class='btn btn-warning'>Nova Senha</a>&nbsp;&nbsp;&nbsp;"; }
 
 $saida .= "<a href='resp-assuntos.php?id='".$dados->id."' class='btn btn-warning'>Assuntos vinculados</a>"
         . "<br><br>";

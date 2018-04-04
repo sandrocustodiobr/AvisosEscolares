@@ -48,6 +48,15 @@ if ($_SESSION["logado"]) {
     <div class="container">
         <div class="row" style="padding-top: 80px">
             <div class="col-md-4 col-md-offset-4">
+                <?php
+                if ($_GET['m'] == 'negado') {
+                    echo '<div class="login-panel panel panel-default panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Acesso negado!</h3>
+                            </div>
+                          </div>';
+                }
+                ?>
                 <div class="login-panel panel panel-default panel-primary">
                     <div class="panel-heading">
                         <h3 class="panel-title">NOTÍCIAS/AVISOS IFSUL</h3>

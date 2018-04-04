@@ -6,6 +6,7 @@ class Responsavel {
     private $admin;
     private $email;
     private $senha;
+    private $bloqueado;
     
     private $tabela;
     private $link;
@@ -61,6 +62,7 @@ class Responsavel {
             $obj->nome = $reg["nome"];
             $obj->admin = $reg["admin"];
             $obj->email = $reg["email"];
+            $obj->bloqueado = $reg["bloqueado"];
             
             $retorno[] = $obj;
         }
@@ -69,6 +71,18 @@ class Responsavel {
     
     public function excluir() {
         $sql = "delete from $this->tabela where id=$this->id";
+        $retorno = mysqli_query($this->link, $sql);
+        return $retorno;
+    }
+    
+    public function bloquear() {
+        $sql = "update $this->tabela set bloqueado=true where id=$this->id";
+        $retorno = mysqli_query($this->link, $sql);
+        return $retorno;
+    }
+    
+    public function desbloquear() {
+        $sql = "update $this->tabela set bloqueado=null where id=$this->id";
         $retorno = mysqli_query($this->link, $sql);
         return $retorno;
     }
@@ -112,6 +126,7 @@ class Responsavel {
             $obj23->nome=$req["nome"];
             $obj23->admin=$req["admin"];
             $obj23->email=$req["email"];
+            $obj23->bloqueado = $req["bloqueado"];
 
             //$this->MostraDados();
             $retorno = $obj23;
@@ -131,7 +146,7 @@ class Responsavel {
     }
     
     public function login() {
-        $sql = "Select * FROM $this->tabela where email='$this->email' and senha='$this->senha'";
+        $sql = "Select * FROM $this->tabela where email='$this->email' and senha='$this->senha' ";
 
         $resultado = mysqli_query($this->link, $sql);
         $retorno = NULL;
@@ -144,7 +159,11 @@ class Responsavel {
             $obj->email = $req["email"];
             $obj->nome  = $req["nome"];
             $obj->admin = $req["admin"];
+            $obj->bloqueado = $req["bloqueado"];
             $retorno = $obj;
+            if ($obj->bloqueado) {
+                $retorno = null;
+            }
         } else {
             $retorno = null;
         }
