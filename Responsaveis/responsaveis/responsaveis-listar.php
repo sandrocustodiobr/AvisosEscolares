@@ -84,7 +84,8 @@ foreach ($listar as $dados){
     <td>'.$temp.'</td>
     <td><a href="resp-assuntos.php?id='.$dados->id.'" class="btn btn-warning">Assuntos vinculados</a></td>
     <td><a href="responsaveis-unico.php?id='.$dados->id.'" class="btn btn-primary">Ver</a>
-        <a href="responsaveis-upd.php?id='.$dados->id.'" class="btn btn-warning">Editar</a></td>
+        <a href="responsaveis-upd.php?id='.$dados->id.'" class="btn btn-warning">Editar</a>
+        <a href="muda_senha.php?id_mudar_senha='.$dados->id.'" class="btn btn-warning">Mudar Senha</a></td>
     <td><a href="responsaveis-del.php?id='.$dados->id.'" class="btn btn-danger">Excluir</a></td>
     </tr>';
 }

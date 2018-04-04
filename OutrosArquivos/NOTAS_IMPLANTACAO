@@ -1,4 +1,8 @@
 
+SENHA 123 em md5: 
+202cb962ac59075b964b07152d234b70 (sem sal)
+0700d6066adde417fb2ecdf32d5a5f4b (com sal 'a' e 'b')
+
 CURSOS:
 - TII Int
 - EEL Int

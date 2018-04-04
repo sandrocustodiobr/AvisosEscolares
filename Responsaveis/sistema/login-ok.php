@@ -55,7 +55,7 @@
 
                             $objUsuario = new Responsavel();
                             $objUsuario->email = strip_tags($_POST['email']);
-                            $objUsuario->senha = strip_tags($_POST['senha']);
+                            $objUsuario->setSenha($_POST['senha']);
                             $login = $objUsuario->login();
                             if ($login) {
                                 if ($login->admin && $_POST['admin'] == 'on') {

@@ -25,7 +25,7 @@ $objResp = new Responsavel();
 $objResp->nome =strip_tags($_POST['nome']);
 $objResp->admin=strip_tags($_POST['admin']);
 $objResp->email=strip_tags($_POST['email']);
-$objResp->senha=strip_tags($_POST['senha']);
+$objResp->setSenha($_POST['senha']);
 
 $inserido = $objResp->Inserir();
 

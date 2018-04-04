@@ -45,7 +45,7 @@ class Responsavel {
     
     public function MostraDados() {
         echo "<br>".$this->id."<br>".$this->nome."<br>".$this->email.
-                "<br>".$this->admin."<br>".$this->senha."<br>".$this->tabela."<br>";
+                "<br>".$this->admin."<br>".$this->tabela."<br>";
     }
     
     public function listar($complemento = "") {     
@@ -61,7 +61,6 @@ class Responsavel {
             $obj->nome = $reg["nome"];
             $obj->admin = $reg["admin"];
             $obj->email = $reg["email"];
-            $obj->senha = $reg["senha"];
             
             $retorno[] = $obj;
         }
@@ -113,7 +112,6 @@ class Responsavel {
             $obj23->nome=$req["nome"];
             $obj23->admin=$req["admin"];
             $obj23->email=$req["email"];
-            $obj23->senha=$req["senha"];
 
             //$this->MostraDados();
             $retorno = $obj23;
@@ -152,5 +150,10 @@ class Responsavel {
         }
 
         return $retorno;
+    }
+    
+    public function setSenha($pSenha) {
+        include_once '../sistema/constantes.php';
+        $this->senha = md5(SALT1.strip_tags($pSenha).SALT2);
     }
 }

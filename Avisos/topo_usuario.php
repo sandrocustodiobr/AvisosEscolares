@@ -12,8 +12,11 @@
     <link href="css/font-style.css" rel="stylesheet">
     <link href="css/flexslider.css" rel="stylesheet">
 
-    <script type="text/javascript" src="js/jquery.js"></script>    
+    <!--- <script type="text/javascript" src="js/jquery.js"></script>    -->
+    
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script> 
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    
 
 	<script type="text/javascript" src="js/lineandbars.js"></script>
     
@@ -88,27 +91,31 @@
   
   	<!-- NAVIGATION MENU -->
 
-    <div class="navbar-nav navbar-inverse navbar-fixed-top" style="background-color: #003500">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div> 
-        <div class="navbar-collapse collapse">
-            <a class="navbar-brand" href="index.php">
-                <img src="images/Logotipo_IF.png" height="23">
-            </a>  
-            <a class="navbar-brand" href="index.php">
-                <span style="color: lightgreen">Avisos/Notícias IFSul</span>
-            </a>  
-            <ul class="nav navbar-nav">
-              <li <?php echo ($nome_tela=="index")    ? 'class="active"' : ''; ?> ><a href="index.php"><i class="icon-home icon-white"></i> Home</a></li>                            
-              <li <?php echo ($nome_tela=="filtros" ) ? 'class="active"' : ''; ?> ><a href="filtros.php"><i class="icon-th icon-white"></i> Filtros</a></li>
-              <li><a href="../Responsaveis/sistema/login.php"><i class="fa fa-sign-in"></i></a></li>
-            </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
+        <div class="navbar-nav navbar-inverse navbar-fixed-top" style="background-color: #003500">
+            <div class="container">
+                <div class="navbar-header row">
+                    <div class="col-1">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#headerNav" aria-expanded="false">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="col-11" style="margin-left: 5%;">
+                        <a class="navbar-brand" href="index.php">
+                            <img src="images/Logotipo_IF.png" height="23">
+                        </a>     
+                        <a class="navbar-brand" href="index.php">
+                            <span style="color: lightgreen">Avisos/Notícias IFSul</span>
+                        </a> 
+                    </div>
+                </div>
+                <div class="collapse navbar-collapse" id="headerNav">     
+                    <ul class="nav navbar-nav">
+                        <li <?php echo ($nome_tela == "index") ? 'class="active"' : ''; ?> ><a href="index.php"><i class="icon-home icon-white"></i> Home</a></li>                            
+                        <li <?php echo ($nome_tela == "filtros" ) ? 'class="active"' : ''; ?> ><a href="filtros.php"><i class="icon-th icon-white"></i> Filtros</a></li>
+                        <li><a href="../Responsaveis/sistema/login.php"><i class="fa fa-sign-in"></i></a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
